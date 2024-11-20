@@ -1,0 +1,586 @@
+/*****************************
+     HERO SECTION
+/*****************************/
+/* General container and layout styles */
+.homepage-container {
+  padding: 0 1rem;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  position: relative;
+  max-width: 1400px;
+  margin: 2rem auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  opacity: 40%;
+}
+
+.hero-text {
+  
+  z-index: 2;
+  max-width: 600px;
+  text-align: left;
+}
+
+.hero-text h1 {
+  
+  margin-bottom: 1rem;
+  color:#d9d9d9;
+}
+
+.hero-text h3 {
+  color: white;
+  line-height: 1.6;
+}
+
+/*****************************
+     WHY GLAD SECTION
+/*****************************/
+.why-glad {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.why-glad h1 {
+  
+  margin-bottom: 2rem;
+}
+
+.cards-container1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card1 {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card1:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  color: #1772bd;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.card1:hover .card-icon {
+  color: #2b3d8e;
+}
+
+.card1 h2 {
+  
+  margin-bottom: 0.5rem;
+}
+
+.card1 p {
+  
+  line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .hero-text h3 {
+   
+    text-align: center;
+  }
+
+  .why-glad h1 {
+    font-size: 1.6rem;
+  }
+
+  .cards-container {
+    padding: 0 10px;
+  }
+
+  .card1 {
+    padding: 1rem;
+  }
+}
+
+
+
+
+.card1 {
+  padding: 2rem;
+}
+
+.read-the-docs {
+  color: #888;
+}
+/* this is navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*****************************
+     CONTACT button
+/*****************************/
+
+.contact-button {
+  padding: 12px 24px; /* Adjust padding for size */
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  background: linear-gradient(
+    90deg,
+    #6a11cb,
+    #2575fc
+  ); /* Gradient background */
+  border: none;
+  border-radius: 20px; /* Rounded edges */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: all 0.3s ease; /* Smooth transition */
+  width: 150px;
+  height: 70px;
+  margin-top: 40px;
+}
+
+.contact-button:hover {
+  background: linear-gradient(90deg, #2575fc, #6a11cb); /* Reverse gradient */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.contact-button:active {
+  transform: scale(0.98); /* Slight press-down effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+}
+
+#contact-us {
+  width: 300px;
+}
+.contactus-btn {
+  display: flex;
+  justify-content: center;
+}
+
+/* Media Queries for navbar*/
+
+/* Extra Large Screens (XL) */
+@media (min-width: 1200px) {
+  .navbar-container {
+    padding: 0 40px;
+  }
+}
+
+/* Large Screens (LG) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar-logo img {
+    width: 130px;
+  }
+  .contact-button {
+    width: 140px;
+    height: 55px;
+    font-size: 16px;
+  }
+}
+
+/* Medium Screens (MD) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar-links {
+    gap: 15px;
+  }
+  .contact-button {
+    width: 130px;
+    height: 50px;
+    font-size: 15px;
+  }
+}
+
+/* Small Screens (SM) */
+@media (max-width: 767px) {
+  .navbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar-logo img {
+    width: 270px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+  }
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .contact-button {
+    width: 120px;
+    height: 45px;
+    font-size: 14px;
+  }
+}
+/*****************************
+     NEWSLETTER SECTION
+/*****************************/
+.newsletter-popup {
+  background-color: rgb(225, 225, 225);
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  max-width: 1200px;
+
+}
+.secNewsletter {
+  display: flex;
+  justify-content: center;
+}
+.newsletter-content {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+h2 {
+  
+  margin-bottom: 1rem;
+
+}
+.mailchimp-form {
+  font-size: 1rem;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.mailchimp-form input {
+  padding: 0.75rem;
+  margin-left: 60px;
+  border: 3px solid white;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 50%;
+}
+.mailchimp-form button {
+  padding: 0.75rem;
+  margin-left: 15px;
+  background-color: white;
+  color: #2b3d8e;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.mailchimp-form button:hover {
+  background-color: #d9d9d9;
+}
+@media (min-width: 768px) {
+  .newsletter-content {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 2rem;
+  }
+  .mailchimp-form form {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  .mailchimp-form input {
+    flex: 1;
+  }
+}
+
+.empty-message {
+  text-align: center;
+  color: #888;
+  font-size: 18px;
+  padding: 20px;
+}
+
+/*****************************
+     CONTACT SECTION
+/*****************************/
+/* Base Styles */
+.contact-form-container {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+.contact-title {
+  font-size: 3rem;
+  color: #2B3D8E;
+  font-family: "Playfair Display", serif;
+  margin-top: 1rem;
+}
+.contact-subtitle {
+  font-size: 2.5rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #3E3D3D;
+}
+/* Form Layout */
+.form-grid {
+  display: grid;
+  gap: 1rem;
+}
+.form-grid-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.input-field {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  width: auto;
+}
+.textarea {
+  height: 120px;
+  resize: vertical;
+}
+.submit-button {
+  padding: 1rem;
+  background-color: #1772BD;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 35%;
+}
+.submit-button:hover {
+  background-color: #2B3D8E;
+}
+/* Responsiveness */
+/* Small Screens : Smaller than 768px */
+@media (max-width: 767px) {
+  .contact-title {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+  .contact-subtitle {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .form-grid {
+    gap: 0.8rem;
+  }
+  .form-grid-row {
+    grid-template-columns: 1fr;
+  }
+  .submit-button {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+}
+/* Medium Screens (MD): Between 768px and 992px */
+@media (min-width: 768px) and (max-width: 991px) {
+  .contact-title {
+    font-size: 2rem;
+  }
+  .contact-subtitle {
+    font-size: 1rem;
+  }
+  .form-grid-row {
+    grid-template-columns: 1fr;
+  }
+}
+/* Large Screens (LG): Between 992px and 1200px */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .contact-title {
+    font-size: 2.25rem;
+  }
+  .contact-subtitle {
+    font-size: 1.1rem;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .form-grid-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* Extra Large Screens (XL): Wider than 1200px */
+@media (min-width: 1200px) {
+  .contact-title {
+    font-size: 2.5rem;
+  }
+  .contact-subtitle {
+    font-size: 1.2rem;
+  }
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*  here we style our services */
+
+
+.header {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: #3E3D3D;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-right: 80%;
+}
+/* Services Component */
+.services {
+  padding: 20px;
+  
+}
+/* Cards Container */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+/* Card Component */
+.card {
+  display: flex;
+  box-sizing: border-box;
+  background-color: #1772BD;
+  color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 500px;
+  transition: transform 0.2s;
+  padding: 10px;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+}
+.card-text {
+  padding: 10px;
+}
+.card h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  margin: 5px 0;
+  padding-left: 25px;
+  padding-top: 0px;
+}
+.card h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  padding-left: 25px;
+  padding-top: 0px;
+}
+/*
+@media (min-width: 1200px) {
+  .card {
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .card {
+    display: flex;
+    flex-direction: row;
+  }
+  .card h2 {
+    font-size: 18px;
+  }
+  .card h3 {
+    font-size: 15px;
+  }
+  .card-text {
+    padding: 10px;
+  }
+  .card-image {
+    width: 150px;
+    height: 150px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .card-image {
+    height: 50%;
+  }
+  .card h2 {
+    font-size: 18px;
+  }
+  .card h3 {
+    font-size: 15px;
+  }
+  .card-text {
+    padding: 2px;
+  }
+  .card-image {
+    width: 150px;
+    height: 200px;
+    border-radius: 8px 0 0 8px;
+  }
+}
+*/
+@media (max-width: 768px) {
+  .card {
+    display: flex;
+    flex-direction: row;
+    background-color: #1772BD;
+    color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    transition: transform 0.2s;
+  }
+  .card-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 8px 0 0 8px;
+    align-self: center;
+  }
+  .cards-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+  }
+  .services {
+    padding: 10px;
+  }
+}
