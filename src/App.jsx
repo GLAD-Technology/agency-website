@@ -44,22 +44,42 @@ const HomePage = () => {
   }, []);
 
   const [formData, setFormData] = useState({
-    email: "",
     firstName: "",
     lastName: "",
+    email: "",
     phone: "",
     company: "",
     inquiry: "",
   });
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-  };
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        const errorResponse = await response.json();
+        setErrorMessage(errorResponse.message || "Failed to send the email.");
+      }
+    } catch (error) {
+      setErrorMessage("An error occurred. Please try again later.");
+    }
   };
 
   // Fetch hero section data
@@ -92,6 +112,10 @@ const HomePage = () => {
     };
     fetchCardsData();
   }, []);
+
+  if (isSubmitted) {
+    return <p>Thank you for reaching out! We'll get back to you soon.</p>;
+  }
 
   return (
     <>
@@ -132,7 +156,6 @@ const HomePage = () => {
             </h3>
           </div>
         </div>
-
         {/* Why GLAD Technology Section */}
         <div className="why-glad">
           <h1>Why GLAD Technology?</h1>
@@ -156,7 +179,6 @@ const HomePage = () => {
           </div>
         </div>
         {/* contact button goes here */}
-
         <section className="contactus-btn">
           <button
             id="contact-us"
@@ -167,9 +189,11 @@ const HomePage = () => {
           </button>
         </section>
         {/** services page is here */}
-<br />
+        <br />
         <section className="services">
-          <h1 className="header">Our Services</h1>
+          <div id="center">
+            <h1 className="header">Our Services</h1>
+          </div>
           <div className="cards-container">
             {services.length > 0 ? (
               services.map((service, index) => (
@@ -190,20 +214,22 @@ const HomePage = () => {
             )}
           </div>
         </section>
-        <br /><br /> <br /> <br /><br /> <br /> 
+        <br />
+        <br /> <br /> <br />
+        <br /> <br />
         {/* Newsletter Signup Section */}
-       <section className="secNewsletter">
-       <div className="newsletter-popup">
-          <div className="newsletter-content">
-            <h2>
-              Stay inspired by stories of how GLAD Technology is creating
-              opportunities and transforming lives globally. Sign up for our
-              email newsletter.
-            </h2>
-            <div
-              className="mailchimp-form"
-              dangerouslySetInnerHTML={{
-                __html: `
+        <section className="secNewsletter">
+          <div className="newsletter-popup">
+            <div className="newsletter-content">
+              <h2>
+                Stay inspired by stories of how GLAD Technology is creating
+                opportunities and transforming lives globally. Sign up for our
+                email newsletter.
+              </h2>
+              <div
+                className="mailchimp-form"
+                dangerouslySetInnerHTML={{
+                  __html: `
                   <form action="https://your-mailchimp-url" method="post" target="_blank">
                     <div>
                       <input type="email" name="EMAIL" placeholder="Your email" required />
@@ -211,28 +237,25 @@ const HomePage = () => {
                     </div>
                   </form>
                 `,
-              }}
-            />
+                }}
+              />
+            </div>
           </div>
-        </div>
-       </section>
+        </section>
       </div>
 
       {/* Contact Section */}
       <section ref={contactRef} className="contact-section">
         <div className="contact-form-container">
           <div className="contact-grid">
-            {/* Text Content */}
             <div>
               <h1 className="contact-title">Let&apos;s Connect</h1>
               <h2 className="contact-subtitle">
                 Contact GLAD Technology today to bring your ideas to life while
-                making a lasting impact. Let&apos;s create something
-                extraordinary together.
+                making a lasting impact.
               </h2>
             </div>
-            {/* Form */}
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-grid">
                 <input
                   type="email"
@@ -288,6 +311,8 @@ const HomePage = () => {
               </div>
             </form>
           </div>
+
+          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         </div>
       </section>
     </>

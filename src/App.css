@@ -33,25 +33,28 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
-  opacity: 40%;
+  opacity: 30%;
 }
 
 .hero-text {
-  
-  z-index: 2;
+  z-index: 1;
   max-width: 600px;
   text-align: left;
 }
 
 .hero-text h1 {
-  
   margin-bottom: 1rem;
-  color:#d9d9d9;
+  color: #d9d9d9;
+  text-shadow: 5px 2px black;
+  font-size: 70px;
 }
 
 .hero-text h3 {
-  color: white;
+  color: #d9d9d9;
+  margin-top: 60px;
+  text-shadow: 4px 2px black;
   line-height: 1.6;
+  font-size: 30px;
 }
 
 /*****************************
@@ -63,7 +66,6 @@
 }
 
 .why-glad h1 {
-  
   margin-bottom: 2rem;
 }
 
@@ -101,12 +103,10 @@
 }
 
 .card1 h2 {
-  
   margin-bottom: 0.5rem;
 }
 
 .card1 p {
-  
   line-height: 1.6;
 }
 
@@ -118,7 +118,6 @@
   }
 
   .hero-text h3 {
-   
     text-align: center;
   }
 
@@ -134,9 +133,6 @@
     padding: 1rem;
   }
 }
-
-
-
 
 .card1 {
   padding: 2rem;
@@ -206,7 +202,8 @@
 /* Large Screens (LG) */
 @media (min-width: 992px) and (max-width: 1199px) {
   .navbar-logo img {
-    width: 130px;
+    width: 370px;
+    margin: 15px 0 0 15px;
   }
   .contact-button {
     width: 140px;
@@ -219,6 +216,10 @@
 @media (min-width: 768px) and (max-width: 991px) {
   .navbar-links {
     gap: 15px;
+  }
+  .navbar-logo img {
+    width: 370px;
+    margin: 15px 0 0 15px;
   }
   .contact-button {
     width: 130px;
@@ -235,9 +236,9 @@
   }
   .navbar-logo img {
     width: 270px;
-    margin-bottom: 10px;
-    margin-top: 30px;
+    margin: 15px 0 0 12px;
   }
+
   .navbar-links {
     display: flex;
     flex-direction: column;
@@ -249,6 +250,7 @@
     font-size: 14px;
   }
 }
+
 /*****************************
      NEWSLETTER SECTION
 /*****************************/
@@ -262,7 +264,6 @@
   gap: 1.5rem;
   align-items: center;
   max-width: 1200px;
-
 }
 .secNewsletter {
   display: flex;
@@ -273,15 +274,14 @@
   grid-template-columns: 1fr;
 }
 h2 {
-  
   margin-bottom: 1rem;
-
 }
 .mailchimp-form {
   font-size: 1rem;
   justify-content: space-between;
   margin-top: 20px;
 }
+
 .mailchimp-form input {
   padding: 0.75rem;
   margin-left: 60px;
@@ -342,7 +342,7 @@ h2 {
 }
 .contact-title {
   font-size: 3rem;
-  color: #2B3D8E;
+  color: #2b3d8e;
   font-family: "Playfair Display", serif;
   margin-top: 1rem;
 }
@@ -351,7 +351,7 @@ h2 {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   line-height: 1.6;
-  color: #3E3D3D;
+  color: #3e3d3d;
 }
 /* Form Layout */
 .form-grid {
@@ -377,7 +377,7 @@ h2 {
 }
 .submit-button {
   padding: 1rem;
-  background-color: #1772BD;
+  background-color: #1772bd;
   color: white;
   border: none;
   border-radius: 8px;
@@ -388,13 +388,13 @@ h2 {
   width: 35%;
 }
 .submit-button:hover {
-  background-color: #2B3D8E;
+  background-color: #2b3d8e;
 }
 /* Responsiveness */
 /* Small Screens : Smaller than 768px */
 @media (max-width: 767px) {
   .contact-title {
-    font-size: 1.75rem;
+    font-size: 2.0rem;
     text-align: center;
   }
   .contact-subtitle {
@@ -455,19 +455,20 @@ h2 {
 
 /*  here we style our services */
 
-
 .header {
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display";
   font-size: 3rem;
-  color: #3E3D3D;
-  text-align: center;
+  color: #3e3d3d;
   margin-bottom: 20px;
-  padding-right: 80%;
 }
+
 /* Services Component */
 .services {
-  padding: 20px;
-  
+  padding: 20px 0;
+}
+#center {
+  display: flex;
+  justify-content: center;
 }
 /* Cards Container */
 .cards-container {
@@ -480,7 +481,7 @@ h2 {
 .card {
   display: flex;
   box-sizing: border-box;
-  background-color: #1772BD;
+  background-color: #1772bd;
   color: white;
   border-radius: 8px;
   overflow: hidden;
@@ -513,55 +514,12 @@ h2 {
   padding-left: 25px;
   padding-top: 0px;
 }
-/*
-@media (min-width: 1200px) {
-  .card {
-  }
-}
-@media (min-width: 992px) and (max-width: 1200px) {
-  .card {
-    display: flex;
-    flex-direction: row;
-  }
-  .card h2 {
-    font-size: 18px;
-  }
-  .card h3 {
-    font-size: 15px;
-  }
-  .card-text {
-    padding: 10px;
-  }
-  .card-image {
-    width: 150px;
-    height: 150px;
-  }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  .card-image {
-    height: 50%;
-  }
-  .card h2 {
-    font-size: 18px;
-  }
-  .card h3 {
-    font-size: 15px;
-  }
-  .card-text {
-    padding: 2px;
-  }
-  .card-image {
-    width: 150px;
-    height: 200px;
-    border-radius: 8px 0 0 8px;
-  }
-}
-*/
+
 @media (max-width: 768px) {
   .card {
     display: flex;
     flex-direction: row;
-    background-color: #1772BD;
+    background-color: #1772bd;
     color: white;
     border-radius: 8px;
     overflow: hidden;
