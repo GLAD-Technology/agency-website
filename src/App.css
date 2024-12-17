@@ -519,7 +519,7 @@ h2 {
   color: #1772bd;
 }
 /* Responsiveness */
-/* Small Screens : Smaller than 768px 
+
 @media (max-width: 767px) {
   .contact-title {
     font-size: 2rem;
@@ -540,7 +540,8 @@ h2 {
     padding: 0.8rem;
   }
 }
- Medium Screens (MD): Between 768px and 992px 
+
+ 
 @media (min-width: 768px) and (max-width: 991px) {
   .contact-title {
     font-size: 2rem;
@@ -552,7 +553,7 @@ h2 {
     grid-template-columns: 1fr;
   }
 }
- Large Screens (LG): Between 992px and 1200px 
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .contact-title {
     font-size: 2.25rem;
@@ -568,7 +569,7 @@ h2 {
     grid-template-columns: 1fr 1fr;
   }
 }
- Extra Large Screens (XL): Wider than 1200px 
+
 @media (min-width: 1200px) {
   .contact-title {
     font-size: 2.5rem;
@@ -580,7 +581,7 @@ h2 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-*/
+
 
 /*  here we style our services */
 
