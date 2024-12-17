@@ -157,7 +157,7 @@ html {
 .why-glad h1 {
   text-align: left; /* Align heading to the left */
   font-size: 2.5rem;
-  margin: 20px 0 30px 80px;
+  margin: 40px 0 70px 80px;
 }
 
 /* Flex container for cards */
@@ -177,8 +177,9 @@ html {
   width: 100%;
   max-width: 350px;
   padding: 1rem;
-  text-align: center;
+  text-align: start;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  width: 350px;
 }
 
 .card1:hover {
