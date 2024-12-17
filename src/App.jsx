@@ -1,6 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect, useRef } from "react";
 import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
+import {
   faDesktop,
   faGlobe,
   faHandshake,
@@ -24,7 +29,16 @@ const HomePage = () => {
   const [heroData, setHeroData] = useState(null);
 
   const handleScrollToContact = () => {
-    contactRef.current.scrollIntoView({ behavior: "smooth" });
+    // Scroll to the contact section
+    contactRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: 'center'
+    });
+
+    // Adjust scroll position after a slight delay to account for the fixed navbar
+    setTimeout(() => {
+      window.scrollBy(0, -60); 
+    }, 80000); 
   };
   const [services, setServices] = useState([]);
 
@@ -148,7 +162,9 @@ const HomePage = () => {
         >
           <div className="hero-overlay"></div>
           <div className="hero-text">
-            <h1>{heroData?.titleLine1 || "Empower Your Brand,"}</h1>
+            <h1 className="empower-text">
+              {heroData?.titleLine1 || "Empower Your Brand,"}
+            </h1>
             <h1>{heroData?.titleLine2 || "Empower Lives"}</h1>
             <h3>
               {heroData?.description ||
@@ -156,6 +172,7 @@ const HomePage = () => {
             </h3>
           </div>
         </div>
+        <br />
         {/* Why GLAD Technology Section */}
         <div className="why-glad">
           <h1>Why GLAD Technology?</h1>
@@ -180,17 +197,17 @@ const HomePage = () => {
         </div>
         {/* contact button goes here */}
         <section className="contactus-btn">
-          <button
-            id="contact-us"
-            className="contact-button"
-            onClick={handleScrollToContact}
-          >
+          <button id="contact-us" onClick={handleScrollToContact}>
             Contact Us
           </button>
         </section>
+        <br />
+        <br /> <br /> <br />
+        <hr />
         {/** services page is here */}
         <br />
-        <section className="services">
+        {/** 
+        * <section className="services">
           <div id="center">
             <h1 className="header">Our Services</h1>
           </div>
@@ -214,14 +231,41 @@ const HomePage = () => {
             )}
           </div>
         </section>
+       */}
+        <section className="services">
+          <div id="center">
+            <h1 className="header">Our Services</h1>
+          </div>
+          <div className="cards-container">
+            {services.length > 0 ? (
+              services.map((service, index) => (
+                <div key={index} className="card">
+                  <div className="card-overlay">
+                    <h2>{service.title}</h2>
+                    <p>{service.description}</p>
+                  </div>
+                  <img
+                    src={service.imageUrl}
+                    alt={service.title}
+                    className="card-image"
+                  />
+                </div>
+              ))
+            ) : (
+              <p>Loading services...</p>
+            )}
+          </div>
+        </section>
         <br />
-        <br /> <br /> <br />
+        <br /> <br /> <br /> <br />
+        <hr />
+        <br />
         <br /> <br />
         {/* Newsletter Signup Section */}
         <section className="secNewsletter">
           <div className="newsletter-popup">
             <div className="newsletter-content">
-              <h2>
+              <h2 className="new-letter-text">
                 Stay inspired by stories of how GLAD Technology is creating
                 opportunities and transforming lives globally. Sign up for our
                 email newsletter.
@@ -245,7 +289,7 @@ const HomePage = () => {
       </div>
 
       {/* Contact Section */}
-      <section ref={contactRef} className="contact-section">
+      <section ref={contactRef} id="contact" style={{ paddingTop: '60px' }}className="contact-section">
         <div className="contact-form-container">
           <div className="contact-grid">
             <div>
@@ -315,6 +359,50 @@ const HomePage = () => {
           {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         </div>
       </section>
+      <footer className="footer">
+        <div className="footer-logo">
+          <img src="/GLAD_logo.png" alt="GLAD Logo" />
+        </div>
+        <div className="footer-content">
+          <p>
+            Email:{" "}
+            <a href="mailto:services@gladtech.io">services@gladtech.io</a>
+          </p>
+          <p>
+            For information about our non-profit educational branch:
+            <a
+              href="https://www.gladtech.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              www.gladtech.org
+            </a>
+          </p>
+          <div className="social-icons">
+            <a
+              href="https://www.facebook.com/p/GLAD-Technology-100090154329991/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faFacebook} size="2x" />
+            </a>
+            <a
+              href="https://www.instagram.com/gladtechnology/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faInstagram} size="2x" />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/glad-technology"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faLinkedin} size="2x" />
+            </a>
+          </div>
+        </div>
+      </footer>
     </>
   );
 };
