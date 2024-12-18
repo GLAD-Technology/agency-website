@@ -32,13 +32,13 @@ const HomePage = () => {
     // Scroll to the contact section
     contactRef.current.scrollIntoView({
       behavior: "smooth",
-      block: 'center'
+      block: "center",
     });
 
     // Adjust scroll position after a slight delay to account for the fixed navbar
     setTimeout(() => {
-      window.scrollBy(0, -60); 
-    }, 80000); 
+      window.scrollBy(0, -60);
+    }, 80000);
   };
   const [services, setServices] = useState([]);
 
@@ -195,47 +195,23 @@ const HomePage = () => {
             )}
           </div>
         </div>
-        {/* contact button goes here */}
+        {/*ontact button goes here */}
         <section className="contactus-btn">
           <button id="contact-us" onClick={handleScrollToContact}>
             Contact Us
           </button>
         </section>
         <br />
-        <br /> <br /> <br />
-        <hr />
         {/** services page is here */}
-        <br />
-        {/** 
-        * <section className="services">
-          <div id="center">
-            <h1 className="header">Our Services</h1>
-          </div>
-          <div className="cards-container">
-            {services.length > 0 ? (
-              services.map((service, index) => (
-                <div key={index} className="card">
-                  <img
-                    src={service.imageUrl}
-                    alt={service.title}
-                    className="card-image"
-                  />
-                  <div className="card-text">
-                    <h2>{service.title}</h2>
-                    <h3>{service.description}</h3>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <p>Loading services...</p>
-            )}
-          </div>
-        </section>
-       */}
         <section className="services">
           <div id="center">
             <h1 className="header">Our Services</h1>
           </div>
+          <hr />
+          <br />
+          <br />
+          <br />
+          <br />
           <div className="cards-container">
             {services.length > 0 ? (
               services.map((service, index) => (
@@ -257,10 +233,8 @@ const HomePage = () => {
           </div>
         </section>
         <br />
-        <br /> <br /> <br /> <br />
-        <hr />
-        <br />
-        <br /> <br />
+        <br /> <br /> 
+        
         {/* Newsletter Signup Section */}
         <section className="secNewsletter">
           <div className="newsletter-popup">
@@ -289,7 +263,12 @@ const HomePage = () => {
       </div>
 
       {/* Contact Section */}
-      <section ref={contactRef} id="contact" style={{ paddingTop: '60px' }}className="contact-section">
+      <section
+        ref={contactRef}
+        id="contact"
+        style={{ paddingTop: "60px" }}
+        className="contact-section"
+      >
         <div className="contact-form-container">
           <div className="contact-grid">
             <div>
@@ -365,17 +344,17 @@ const HomePage = () => {
         </div>
         <div className="footer-content">
           <p>
-            Email:{" "}
+            Email us at:{" "}
             <a href="mailto:services@gladtech.io">services@gladtech.io</a>
           </p>
           <p>
-            For information about our non-profit educational branch:
+            For information about our non-profit educational branch: {" "}
             <a
               href="https://www.gladtech.org"
               target="_blank"
               rel="noopener noreferrer"
             >
-              www.gladtech.org
+               www.gladtech.org
             </a>
           </p>
           <div className="social-icons">

@@ -15,7 +15,7 @@ html {
 .hero-section {
   position: relative;
   max-width: 1200px;
-  margin: 15rem auto auto auto; /*add some margins for the section due to the fixed navbar*/
+  margin: 8rem auto auto auto; /*add some margins for the section due to the fixed navbar*/
   border-radius: 4px;
   overflow: hidden;
 }
@@ -58,7 +58,7 @@ html {
 }
 
 .hero-text h1 {
-  margin-bottom: 1rem;
+  margin: -5px 0;
   color: white;
   font-size: 70px;
   white-space: nowrap;
@@ -67,25 +67,30 @@ html {
 
 .hero-text h3 {
   color: white;
-  margin-top: 60px;
-  line-height: 1.6;
+  margin-top: 50px;
+  line-height: 1;
   font-size: 30px;
 }
 /*=====================================
   styling for small screens herosection
 =======================================*/
 @media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
   .homepage-container {
-    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 0.1rem;
   }
 
   /* Hero Section Styles */
   .hero-section {
     position: relative;
-    max-width: 350px;
-    margin: 20px 10px;
+    max-width: 300px;
+    margin: 20px 5px;
     border-radius: 4px;
-    overflow: hidden;
   }
   .hero-section::before {
     content: "";
@@ -103,6 +108,7 @@ html {
     height: 550px;
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
     overflow-x: hidden;
   }
@@ -119,20 +125,25 @@ html {
   }
 
   .hero-text {
+    display: flex;
+    flex-direction: column;
     z-index: 1;
-    max-width: 50px;
     text-align: left;
-    margin-left: 0;
-    margin-top: 30px;
+    margin: auto auto auto 10px;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-text h1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     margin-bottom: 1rem;
     color: white;
-    font-size: 35px;
+    font-size: 2rem;
     white-space: nowrap;
     align-self: center;
-    margin: 10px 10px 5px -15px;
+    margin: auto auto auto 85px;
     width: 400px;
   }
   /* styling the h1 on the hero page */
@@ -140,8 +151,8 @@ html {
   .hero-text h3 {
     color: white;
     margin-top: 50px;
-    line-height: 1.2;
-    font-size: 15px;
+    line-height: 1;
+    font-size: 17px;
     width: 300px;
     margin-left: -10px;
   }
@@ -157,7 +168,7 @@ html {
 .why-glad h1 {
   text-align: left; /* Align heading to the left */
   font-size: 2.5rem;
-  margin: 40px 0 70px 80px;
+  margin: 40px 0 70px 78px;
 }
 
 /* Flex container for cards */
@@ -165,8 +176,8 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; /* Center cards on each row */
-  gap: 1.5rem;
-  margin: 0 auto;
+  gap: 1.6rem;
+  margin: 0 -20px;
 }
 
 .card1 {
@@ -176,10 +187,10 @@ html {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 350px;
-  padding: 1rem;
+  padding: 1.85rem;
   text-align: start;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
-  width: 350px;
+  width: 400px;
 }
 
 .card1:hover {
@@ -216,8 +227,7 @@ html {
   }
 
   .why-glad h1 {
-    font-size: 2rem;
-    margin: 0 10px 50px 40px;
+    font-size: 1.8rem;
   }
 
   /* Flex container for cards */
@@ -234,10 +244,8 @@ html {
     border: 1px solid white;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 320px;
-    padding: 3rem 1rem;
-    text-align: center;
+    width: 300px;
+    padding: 2rem 2rem;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
   }
 
@@ -247,7 +255,7 @@ html {
   }
 
   .card1 h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 0.5rem;
   }
 
@@ -284,7 +292,6 @@ html {
 .contact-button {
   padding: 15px 24px; /* Adjust padding for size */
   font-size: 20px;
-  font-weight: bold;
   color: white;
   background: #1772bd; /* blue background */
   border: none;
@@ -293,6 +300,7 @@ html {
   transition: all 0.4s ease; /* Smooth transition */
   width: 160px;
   height: 70px;
+  transform: translateX(5px);
   margin-top: 45px;
 }
 
@@ -327,7 +335,6 @@ html {
   transform: scale(1.03);
   color: #1772bd;
 }
-
 .contactus-btn {
   display: flex;
   justify-content: center;
@@ -362,6 +369,76 @@ html {
   justify-content: space-between;
   padding: 0 40px; /* Add spacing to child content */
 }
+/*==============================
+  NAVBAR ON SMALL SCREEN
+================================*/
+@media (max-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+  .navbar-container {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    padding: 0 5px;
+    z-index: 2;
+    background-color: white;
+    left: 0; /* Ensures it starts from the left edge */
+    right: 0; /* Ensures it spans to the right edge */
+    overflow-x: hidden;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  .navbar-logo img {
+    width: 200px;
+    margin: 15px 0 10px 2px;
+  }
+  .navbar-links {
+    display: flex;
+  }
+  .contact-button {
+    width: 70px;
+    height: 35px;
+    margin: 30px 0 0 60px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-button:hover {
+    background: white;
+    border: 2px solid #1772bd;
+    transform: translateX(6px);
+    color: #1772bd;
+  }
+
+  #contact-us {
+    width: 200px;
+    padding: 12px 24px;
+    font-size: 18px;
+    color: white;
+    background: #1772bd;
+    border: 2px solid #1772bd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin-top: 50px;
+    height: 50px;
+  }
+  #contact-us:hover {
+    background: white;
+    border: 2px solid #1772bd;
+    transform: scale(1.03);
+    color: #1772bd;
+  }
+}
 
 /*****************************
      NEWSLETTER SECTION
@@ -370,52 +447,62 @@ html {
   color: white;
   padding: 2rem;
   border-radius: 8px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+  display: flex;
+  justify-content: center;
   align-items: center;
   max-width: 1200px;
 }
 .secNewsletter {
   display: flex;
   justify-content: center;
+  border: 1px solid #1772bd;
+  margin: 0 100px;
+  padding: 10px 0;
+  border-radius: 4px;
+  background-color: white;
 }
 .newsletter-content {
-  display: grid;
-  grid-template-columns: 1fr;
+  max-width: 50%;
+  text-align: left;
 }
-h2 {
+
+.new-letter-text {
   margin-bottom: 1rem;
+  transform: translate(-260px, 40px);
 }
 .new-letter-text {
   font-size: 1.4rem;
 }
 .mailchimp-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   font-size: 1rem;
-  justify-content: space-between;
-  margin-top: 20px;
+  width: 70%;
+  transform: translate(350px, -50px);
 }
 
 .mailchimp-form input {
   padding: 0.75rem;
   margin-left: 60px;
-  border: 3px solid #2b3d8e;
+  border: 1px solid #2b3d8e;
   border-radius: 2px;
   font-size: 1rem;
-  width: 50%;
+  width: 70%;
 }
 
 .mailchimp-form button {
   padding: 0.75rem;
-  margin-left: 15px;
+  margin-left: 60px;
   background-color: #1772bd;
   color: white;
   border-radius: 5px;
   font-size: 1rem;
   border: 1px solid#1772bd;
-  font-weight: bold;
   cursor: pointer;
   width: 120px;
+  transform: translate(350px, -45px);
   transition: background-color 0.3s;
 }
 .mailchimp-form button:hover {
@@ -423,18 +510,68 @@ h2 {
   color: #1772bd;
   border: 2px solid #1772bd;
 }
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+  .newsletter-popup {
+    color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .secNewsletter {
+    display: flex;
+    justify-content: center;
+    margin: 0 10px;
+    padding: 10px 0;
+    border-radius: 4px;
+    background-color: white;
+  }
+
   .newsletter-content {
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
   }
-  .mailchimp-form form {
-    flex-direction: row;
-    gap: 0.5rem;
+
+  h2 {
+    margin-bottom: 0.9rem;
   }
+  .new-letter-text {
+    font-size: 1.3rem;
+  }
+  .mailchimp-form {
+    font-size: 1rem;
+    justify-content: space-between;
+    margin-top: 25px;
+  }
+
   .mailchimp-form input {
-    flex: 1;
+    padding: 1rem;
+    border: 1px solid #2b3d8e;
+    border-radius: 2px;
+    font-size: 1rem;
+    width: 230px;
+    margin-bottom: 10px;
+    margin-left: -2px;
+  }
+
+  .mailchimp-form button {
+    padding: 0.8rem;
+    margin-left: -2px;
+    background-color: #1772bd;
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: 1px solid#1772bd;
+    cursor: pointer;
+    width: 120px;
+    transition: background-color 0.3s;
+  }
+  .mailchimp-form button:hover {
+    background-color: white;
+    color: #1772bd;
+    border: 2px solid #1772bd;
   }
 }
 
@@ -467,15 +604,16 @@ h2 {
   color: white;
   font-family: "Playfair Display", serif;
   margin-top: 1rem;
-  margin-left: -160px;
+  font-weight: 450;
+  margin-left: -210px;
 }
 .contact-subtitle {
-  font-size: 2.5rem;
+  font-size: 1.4rem;
   font-family: "Raleway", sans-serif;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.4;
   color: white;
-  margin-left: -160px;
+  margin-left: -210px;
 }
 /* Form Layout */
 .form-grid {
@@ -519,70 +657,84 @@ h2 {
   border: 2px solid #1772bd;
   color: #1772bd;
 }
-/* Responsiveness */
-
-@media (max-width: 767px) {
+/*==============================
+ small screen styling for contact
+================================*/
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .contact-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    background-color: #2b3d8e;
+  }
+  .contact-form-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    width: 100%;
+    background-color: #2b3d8e;
+    padding: 10px 20px;
+    z-index: 1;
+    transform: translateY(-50px);
+  }
+  .contact-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
   .contact-title {
-    font-size: 2rem;
-    text-align: center;
-  }
-  .contact-subtitle {
-    font-size: 0.9rem;
-    text-align: center;
-  }
-  .form-grid {
-    gap: 0.8rem;
-  }
-  .form-grid-row {
-    grid-template-columns: 1fr;
-  }
-  .submit-button {
-    font-size: 0.9rem;
-    padding: 0.8rem;
-  }
-}
-
- 
-@media (min-width: 768px) and (max-width: 991px) {
-  .contact-title {
-    font-size: 2rem;
-  }
-  .contact-subtitle {
-    font-size: 1rem;
-  }
-  .form-grid-row {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-  .contact-title {
-    font-size: 2.25rem;
+    font-size: 1.8rem;
+    color: white;
+    font-family: "Playfair Display", serif;
+    margin: -15px 0 0 3px;
   }
   .contact-subtitle {
     font-size: 1.1rem;
+    font-family: "Raleway", sans-serif;
+    line-height: 1.4;
+    color: white;
+    margin-bottom: 1.5rem;
+    margin-left: 1px;
   }
-  .contact-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 176%;
+  }
+  .input-field {
+    width: 50%;
+    padding: 12px;
+    font-size: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  .textarea {
+    min-height: 100px;
+    resize: vertical;
   }
   .form-grid-row {
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between the two inputs */
+  }
+  .submit-button {
+    background-color: #1772bd;
+    color: white;
+    border: none;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .submit-button:hover {
+    background-color: white;
   }
 }
-
-@media (min-width: 1200px) {
-  .contact-title {
-    font-size: 2.5rem;
-  }
-  .contact-subtitle {
-    font-size: 1.2rem;
-  }
-  .contact-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 
 /*  here we style our services */
 
@@ -606,7 +758,7 @@ h2 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px; /* space between cards */
+  gap: 25px; /* space between cards */
 }
 
 .card {
@@ -621,7 +773,8 @@ h2 {
   justify-content: center;
   transition: all 0.4s ease;
   border: 1px solid rgb(232, 227, 227);
-  gap: 5px;
+  gap: 10px;
+  padding: 0 1.85rem;
 }
 
 .card-image {
@@ -677,7 +830,7 @@ h2 {
 .card:hover .card-overlay h2,
 .card:hover .card-overlay p {
   left: 0;
-  background-color: #1772bd;
+  background-color: rgba(23, 114, 189, 0.5);
   padding: 15px;
   color: white;
   border-radius: 5px;
@@ -686,34 +839,117 @@ h2 {
 .card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  image-rendering: auto;
 }
 
 @media (max-width: 768px) {
-  .card {
-    display: flex;
-    flex-direction: row;
-    background-color: #1772bd;
-    color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    width: 100%;
-    transition: transform 0.2s;
+  .header {
+    font-family: "Playfair Display";
+    font-size: 1.8rem;
+    color: #2b3d8e;
+    margin-bottom: 5px;
+    text-align: left;
   }
-  .card-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 8px 0 0 8px;
-    align-self: center;
+  .services {
+    padding: 20px 0;
+  }
+  #center {
+    display: flex;
+    justify-content: center;
+    margin: auto;
   }
   .cards-container {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px; /* space between cards */
   }
-  .services {
+
+  .card {
+    position: relative;
+    width: 300px; /* uniform width */
+    height: 400px; /* uniform height */
+    overflow: hidden;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    border: 1px solid rgb(232, 227, 227);
+    gap: 5px;
+    padding: 2rem 2rem;
+    margin: 0 5px;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Hide image initially */
+    transition: opacity 0.3s ease;
+    overflow: hidden;
+  }
+
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+    z-index: 1; /* Above the image */
+    background: white;
     padding: 10px;
+  }
+
+  .card h2 {
+    font-size: 1.2rem;
+    margin: 0 10px;
+    z-index: 1;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+    margin: 10px 10px;
+    z-index: 1;
+  }
+
+  .card:hover .card-image {
+    opacity: 1; /* Show image on hover */
+    cursor: pointer;
+  }
+
+  .card:hover .card-overlay {
+    color: black;
+    cursor: pointer;
+    margin-right: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .card:hover .card-overlay h2,
+  .card:hover .card-overlay p {
+    left: 0;
+    background-color: rgba(23, 114, 189, 0.5);
+    padding: 15px;
+    color: white;
+    border-radius: 5px;
+    transform: translateX(-10px);
+  }
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    image-rendering: auto;
+  }
+  hr {
+    display: none;
   }
 }
 
@@ -721,22 +957,30 @@ h2 {
 .footer {
   background-color: white;
   color: black;
-  padding: 20px;
-  height: 400px;
+  padding: 50px 0 160px 0;
+  height: auto;
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
 
 .footer-logo img {
-  width: 250px; /* Adjust as needed */
-  margin-top: 60px;
-  margin-left: 95px;
+  width: 250px;
+  margin-left: 100px;
+  height: auto;
+}
+
+.footer-content {
+  flex: 1 1 50%;
+  text-align: center;
 }
 
 .footer-content p {
-  transform: translate(50px, 50px);
+  margin: 0 10px 0 -250px;
   font-size: 20px;
+  transform: translateY(80px);
 }
 
 .footer-content a {
@@ -749,22 +993,18 @@ h2 {
 }
 
 .social-icons {
-  margin-top: 60px;
-  transform: translate(35px, 50px);
+  display: flex;
+  margin-right: 50px;
+  margin-top: -50px;
+  justify-content: flex-end;
+  gap: 15px;
+  flex: 1 1 25%;
 }
 
 .social-icons a {
-  margin: 0 10px;
   color: #2b3d8e;
-}
-
-.social-icons img {
-  width: 30px; /* Adjust size */
-  height: 30px;
-}
-
-.social-icons a:hover img {
-  opacity: 0.8;
+  text-decoration: none;
+  font-size: 18px;
 }
 
 /*for the breaking lines*/
@@ -773,4 +1013,69 @@ hr {
   margin: 0 95px;
 }
 
-/**/
+/*=========================
+ footer on small screen
+=============================*/
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .footer {
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all content vertically */
+    padding: 30px;
+    gap: 20px;
+  }
+
+  .footer-logo {
+    display: flex;
+    width: 100%; /* Full width for proper centering */
+  }
+
+  .footer-logo img {
+    width: 170px; /* Adjust size for small screens */
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Full width for stacking */
+    text-align: left; /* Left-align content for links */
+    gap: 10px;
+    padding: 0 20px;
+  }
+
+  .footer-content p {
+    font-size: 15px; /* Adjust font size for readability */
+    margin: 10px auto;
+    transform: translateY(-10px);
+    text-align: left;
+  }
+
+  .footer-content a {
+    color: #2b3d8e;
+    text-decoration: none;
+  }
+
+  .footer-content a:hover {
+    text-decoration: underline;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center; /* Center social icons */
+    gap: 15px; /* Space between icons */
+    width: 100%; /* Full width for alignment */
+  }
+  .social-icons a {
+    margin-top: 10px;
+    color: #2b3d8e;
+    text-decoration: none;
+    font-size: 14px; /* Increase size for better visibility */
+  }
+}
