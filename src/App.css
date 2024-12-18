@@ -447,13 +447,12 @@ html {
   color: white;
   padding: 2rem;
   border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+ 
+
   max-width: 1200px;
 }
 .secNewsletter {
-  display: flex;
   justify-content: center;
   border: 1px solid #1772bd;
   margin: 0 100px;
@@ -462,13 +461,13 @@ html {
   background-color: white;
 }
 .newsletter-content {
-  max-width: 50%;
+  max-width: 100%;
   text-align: left;
 }
 
 .new-letter-text {
   margin-bottom: 1rem;
-  transform: translate(-260px, 40px);
+
 }
 .new-letter-text {
   font-size: 1.4rem;
@@ -479,8 +478,8 @@ html {
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  width: 70%;
-  transform: translate(350px, -50px);
+   width: 100%;
+  
 }
 
 .mailchimp-form input {
@@ -489,7 +488,7 @@ html {
   border: 1px solid #2b3d8e;
   border-radius: 2px;
   font-size: 1rem;
-  width: 70%;
+  width: 100%;
 }
 
 .mailchimp-form button {
@@ -502,7 +501,7 @@ html {
   border: 1px solid#1772bd;
   cursor: pointer;
   width: 120px;
-  transform: translate(350px, -45px);
+ 
   transition: background-color 0.3s;
 }
 .mailchimp-form button:hover {
