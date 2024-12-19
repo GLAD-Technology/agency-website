@@ -233,32 +233,111 @@ const HomePage = () => {
           </div>
         </section>
         <br />
-        <br /> <br /> 
-        
+        <br /> <br />
         {/* Newsletter Signup Section */}
         <section className="secNewsletter">
-          <div className="newsletter-popup">
-            <div className="newsletter-content">
-              <h2 className="new-letter-text">
-                Stay inspired by stories of how GLAD Technology is creating
-                opportunities and transforming lives globally. Sign up for our
-                email newsletter.
-              </h2>
-              <div
-                className="mailchimp-form"
-                dangerouslySetInnerHTML={{
-                  __html: `
-                  <form action="https://your-mailchimp-url" method="post" target="_blank">
-                    <div>
-                      <input type="email" name="EMAIL" placeholder="Your email" required />
-                      <button type="submit">Sign Up</button>
-                    </div>
-                  </form>
-                `,
-                }}
-              />
-            </div>
+          <div className="new-letter-text">
+            <h2>
+              Stay inspired by stories of how GLAD Technology is creating
+              opportunities and transforming lives globally. Sign up for our
+              email newsletter.
+            </h2>
           </div>
+
+          <div id="mc_embed_signup">
+            <form
+              action="https://gladtech.us11.list-manage.com/subscribe/post?u=11e6d08daf1ee202a943d36ec&amp;id=f84e0d7487&amp;f_id=000c0ee0f0"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              className="validate"
+              target="_blank"
+            >
+              <div id="mc_embed_signup_scroll">
+                <div className="mc-field-group">
+                  <label htmlFor="mce-FNAME">
+                    First Name <span className="asterisk">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="FNAME"
+                    id="mce-FNAME"
+                    placeholder="Enter your first name"
+                  />
+                </div>
+                <div className="mc-field-group">
+                  <label htmlFor="mce-LNAME">
+                    Last Name <span className="asterisk">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="LNAME"
+                    id="mce-LNAME"
+                    placeholder="Enter your last name"
+                  />
+                </div>
+                <div className="mc-field-group">
+                  <label htmlFor="mce-EMAIL">
+                    Email Address <span className="asterisk">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="EMAIL"
+                    id="mce-EMAIL"
+                    placeholder="Enter your email address"
+                    required
+                  />
+                </div>
+                <label id="companyname">Company Name</label>
+                <div id="mce-responses" className="response">
+                  <div id="mce-error-response"></div>
+                  <div id="mce-success-response"></div>
+                </div>
+
+                <div aria-hidden="true">
+                  <input
+                    className="company-name"
+                    type="text"
+                    placeholder="Company Name"
+                    name="b_11e6d08daf1ee202a943d36ec_f84e0d7487"
+                    tabIndex="-1"
+                    defaultValue=""
+                  />
+                </div>
+                <div className="optionalParent">
+                  <div className="foot">
+                    <input
+                      type="submit"
+                      name="subscribe"
+                      id="mc-embedded-subscribe"
+                      className="button"
+                      value="Subscribe"
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          {/* Include Mailchimp scripts */}
+          <script
+            type="text/javascript"
+            src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
+          ></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+        (function($) {
+          window.fnames = new Array();
+          window.ftypes = new Array();
+          fnames[1]='FNAME';ftypes[1]='text';
+          fnames[2]='LNAME';ftypes[2]='text';
+          fnames[0]='EMAIL';ftypes[0]='email';
+        })(jQuery);
+        var $mcj = jQuery.noConflict(true);
+      `,
+            }}
+          />
         </section>
       </div>
 
@@ -343,42 +422,46 @@ const HomePage = () => {
           <img src="/GLAD_logo.png" alt="GLAD Logo" />
         </div>
         <div className="footer-content">
-          <p>
-            Email us at:{" "}
-            <a href="mailto:services@gladtech.io">services@gladtech.io</a>
-          </p>
-          <p>
-            For information about our non-profit educational branch: {" "}
-            <a
-              href="https://www.gladtech.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-               www.gladtech.org
-            </a>
-          </p>
-          <div className="social-icons">
-            <a
-              href="https://www.facebook.com/p/GLAD-Technology-100090154329991/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faFacebook} size="2x" />
-            </a>
-            <a
-              href="https://www.instagram.com/gladtechnology/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faInstagram} size="2x" />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/glad-technology"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faLinkedin} size="2x" />
-            </a>
+          <div className="footer-details">
+            <div>
+              <p>
+                Email us at:{" "}
+                <a href="mailto:services@gladtech.io">services@gladtech.io</a>
+              </p>
+              <p>
+                For information about our non-profit educational branch:{" "}
+                <a
+                  href="https://www.gladtech.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  www.gladtech.org
+                </a>
+              </p>
+            </div>
+            <div className="social-icons">
+              <a
+                href="https://www.facebook.com/p/GLAD-Technology-100090154329991/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faFacebook} size="2x" />
+              </a>
+              <a
+                href="https://www.instagram.com/gladtechnology/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faInstagram} size="2x" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/glad-technology"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faLinkedin} size="2x" />
+              </a>
+            </div>
           </div>
         </div>
       </footer>

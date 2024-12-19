@@ -2,6 +2,7 @@ body,
 html {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 /*****************************
      HERO SECTION
@@ -385,6 +386,7 @@ html {
     position: fixed;
     top: 0;
     padding: 0 5px;
+    justify-content: space-between;
     z-index: 2;
     background-color: white;
     left: 0; /* Ensures it starts from the left edge */
@@ -394,19 +396,21 @@ html {
   .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 0 auto;
   }
   .navbar-logo img {
     width: 200px;
-    margin: 15px 0 10px 2px;
+    margin: 15px 0 10px -20px;
   }
   .navbar-links {
     display: flex;
+
+    margin-right: auto;
   }
   .contact-button {
-    width: 70px;
-    height: 35px;
-    margin: 30px 0 0 85px;
+    width: 100%;
+    height: 40px;
+    margin: 30px 0 0 auto;
     font-size: 12px;
     display: flex;
     align-items: center;
@@ -438,22 +442,33 @@ html {
     transform: scale(1.03);
     color: #1772bd;
   }
-
 }
-@media (max-width: 360px){
+@media (max-width: 361px) {
   .contact-button {
-    width: 70px;
-    height: 35px;
-    margin: 30px 0 0 55px;
-    font-size: 12px;
+    width: 60%;
+    height: 42px;
+    margin: 25px 0 0 40px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+  .why-glad {
+    margin: 1rem 1rem;
+  }
+
+  .why-glad h1 {
+    font-size: 1.8rem;
+    white-space: nowrap;
+    margin: auto 10px;
+    padding: 0 5px 50px 5px;
+  }
 }
+
+/*=========================================*/
 @media (min-width: 370px) and (max-width: 377px) {
   .contact-button {
-    width: 70px;
+    width: 50%;
     height: 35px;
     margin: 30px 0 0 72px;
     font-size: 12px;
@@ -462,9 +477,9 @@ html {
     justify-content: center;
   }
 }
-@media (min-width: 380px)and (max-width:389px) {
+@media (min-width: 380px) and (max-width: 389px) {
   .contact-button {
-    width: 70px;
+    width: 50%;
     height: 35px;
     margin: 30px 0 0 80px;
     font-size: 12px;
@@ -474,9 +489,9 @@ html {
   }
 }
 
-@media (min-width: 410px)and (max-width:414px) {
+@media (min-width: 410px) and (max-width: 414px) {
   .contact-button {
-    width: 70px;
+    width: 50%px;
     height: 35px;
     margin: 30px 0 0 106px;
     font-size: 12px;
@@ -487,10 +502,10 @@ html {
 }
 @media (min-width: 445px) and (max-width: 449px) {
   .contact-button {
-    width: 70px;
-    height: 35px;
-    margin: 30px 0 0 145px;
-    font-size: 12px;
+    width: 50%;
+    height: 40px;
+    margin: 30px 0 0 110px;
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -546,68 +561,96 @@ html {
 /*****************************
      NEWSLETTER SECTION
 /*****************************/
-.newsletter-popup {
-  color: white;
-  padding: 2rem;
-  border-radius: 8px;
-
-  max-width: 1200px;
-}
 .secNewsletter {
-  justify-content: center;
-  border: 1px solid #1772bd;
-  margin: 0 100px;
-  padding: 10px 0;
-  border-radius: 4px;
-  background-color: white;
-}
-.newsletter-content {
-  max-width: 100%;
-  text-align: left;
-}
-
-.new-letter-text {
-  margin-bottom: 1rem;
-}
-.new-letter-text {
-  font-size: 1.4rem;
-}
-.mailchimp-form {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
-  font-size: 1rem;
-  width: 100%;
+  justify-content: space-between;
+  padding: 40px 40px;
+  background-color: white; /* Light background */
+  border-radius: 4px;
+  border: 1px solid #1772bd;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 5%;
 }
 
-.mailchimp-form input {
-  padding: 0.75rem;
-  margin-left: 60px;
-  border: 1px solid #2b3d8e;
+.new-letter-text {
+  flex: 4; /* 40% */
+  font-size: 1.2rem;
+  color: black;
+}
+
+.new-letter-text h2 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+}
+
+.new-letter-text .indicates-required {
+  font-size: 0.9rem;
+  color: red;
+}
+
+#mc_embed_signup {
+  flex: 5; /* 50% */
+}
+
+.mc-field-group {
+  margin-bottom: 15px;
+}
+
+.mc-field-group label, #companyname {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #1772bd;
+ 
+}
+
+
+.mc-field-group input, .company-name {
+  width: 60%;
+  padding: 10px;
+  border: 1px solid #1772bd;
   border-radius: 2px;
   font-size: 1rem;
-  width: 100%;
+  height: 35px;
+  background-color: #fff;
+  color: #2b3d8e;
+
+}
+#mc_embed_signup {
+  transform: translateX(200px);
 }
 
-.mailchimp-form button {
-  padding: 0.75rem;
-  margin-left: 60px;
-  background-color: #1772bd;
+#mc-embedded-subscribe {
+  background-color: #2b3d8e;
   color: white;
+  padding: 15px 50px;
+  border: none;
+  margin-top: 10px;
   border-radius: 5px;
   font-size: 1rem;
-  border: 1px solid#1772bd;
   cursor: pointer;
-  width: 120px;
+  transition: background-color 0.3s ease;
+}
 
-  transition: background-color 0.3s;
+#mc-embedded-subscribe:hover {
+  background-color: #0056b3;
 }
-.mailchimp-form button:hover {
-  background-color: white;
-  color: #1772bd;
-  border: 2px solid #1772bd;
+
+.response {
+  font-size: 0.9rem;
+  margin-top: 10px;
 }
+
+#mc-error-response {
+  color: #e63946;
+}
+
+#mc-success-response {
+  color: #38b000;
+}
+
 @media (max-width: 768px) {
   .newsletter-popup {
     color: white;
@@ -946,11 +989,10 @@ html {
     font-family: "Playfair Display";
     font-size: 1.8rem;
     color: #2b3d8e;
-    margin-bottom: 5px;
-    text-align: left;
+    margin-bottom: -5px;
   }
   .services {
-    padding: 20px 0;
+    padding: 10px 0;
   }
   #center {
     display: flex;
@@ -1072,13 +1114,12 @@ html {
 
 .footer-content {
   flex: 1 1 50%;
-  text-align: center;
 }
 
 .footer-content p {
-  margin: 0 10px 0 -250px;
+  margin: 0 10px 0 50px;
   font-size: 20px;
-  transform: translateY(80px);
+  transform: translateY(-10px);
 }
 
 .footer-content a {
@@ -1092,8 +1133,9 @@ html {
 
 .social-icons {
   display: flex;
-  margin-right: 50px;
+  margin-right: 120px;
   margin-top: -50px;
+
   justify-content: flex-end;
   gap: 15px;
   flex: 1 1 25%;
@@ -1110,7 +1152,47 @@ hr {
   max-width: 100%;
   margin: 0 95px;
 }
+/**===================================
+  footer on medium screen
+======================================*/
+@media (min-width: 769px) and (max-width: 1300px) {
+  .footer-logo img {
+    width: 200px;
+    margin-left: 100px;
+    height: auto;
+  }
 
+  .footer-content p {
+    font-size: 15px; /* Adjust font size for readability */
+    margin: 1px 50px;
+  }
+
+  .footer-content a {
+    color: #2b3d8e;
+    text-decoration: none;
+  }
+
+  .footer-content a:hover {
+    text-decoration: underline;
+  }
+  .footer-details {
+    display: flex;
+    flex-direction: column;
+  }
+  .social-icons {
+    display: flex;
+    justify-content: center; /* Center social icons */
+    width: 100%;
+    margin-left: -140px;
+  }
+  .social-icons a {
+    margin-top: 10px;
+    transform: translateY(50px);
+    color: #2b3d8e;
+    text-decoration: none;
+    font-size: 14px; /* Increase size for better visibility */
+  }
+}
 /*=========================
  footer on small screen
 =============================*/
@@ -1135,24 +1217,16 @@ hr {
   }
 
   .footer-logo img {
-    width: 180px; /* Adjust size for small screens */
+    width: 190px; /* Adjust size for small screens */
     height: auto;
     margin: 0 auto;
   }
 
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    text-align: left;
-    gap: 10px;
-    padding: 0 20px;
-  }
-
   .footer-content p {
     font-size: 15px; /* Adjust font size for readability */
-    margin: 10px auto;
-    text-align: left;
+    margin: 1px auto;
+    text-align: center;
+    transform: translateY(20px);
   }
 
   .footer-content a {
@@ -1163,15 +1237,18 @@ hr {
   .footer-content a:hover {
     text-decoration: underline;
   }
-
+  .footer-details {
+    display: flex;
+    flex-direction: column;
+  }
   .social-icons {
     display: flex;
     justify-content: center; /* Center social icons */
-    gap: 15px; /* Space between icons */
-    width: 100%; /* Full width for alignment */
+    width: 100%;
   }
   .social-icons a {
     margin-top: 10px;
+    transform: translateY(100px);
     color: #2b3d8e;
     text-decoration: none;
     font-size: 14px; /* Increase size for better visibility */
