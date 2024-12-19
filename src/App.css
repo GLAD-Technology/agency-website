@@ -224,7 +224,7 @@ html {
 =======================================*/
 @media (max-width: 768px) {
   .why-glad {
-    margin: 10px .1rem;
+    margin: 10px 0.1rem;
   }
 
   .why-glad h1 {
@@ -466,47 +466,59 @@ html {
     margin: auto 10px;
     padding: 0 5px 50px 5px;
   }
+   
 }
 
 /*=========================================*/
-@media (min-width: 370px) and (max-width: 377px) {
+@media (min-width: 370px) and (max-width: 380px) {
   .contact-button {
-    width: 50%;
-    height: 35px;
-    margin: 30px 0 0 72px;
-    font-size: 12px;
+    width: 55%;
+    height: 40px;
+    margin: 30px 0 0 55px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+  .why-glad {
+    margin: 1rem 1rem;
+  }
+
+  .why-glad h1 {
+    font-size: 1.8rem;
+    white-space: nowrap;
+    margin: auto 10px;
+    padding: 0 5px 50px 5px;
+  }
 }
-@media (min-width: 380px) and (max-width: 389px) {
+@media (min-width: 380px) and (max-width: 410px) {
   .contact-button {
     width: 50%;
-    height: 35px;
-    margin: 30px 0 0 80px;
-    font-size: 12px;
+    height: 40px;
+    margin: 30px 0 0 60px;
+    font-size: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 }
 
-@media (min-width: 410px) and (max-width: 414px) {
+@media (min-width: 410px) and (max-width: 445px) {
   .contact-button {
-    width: 50%px;
-    height: 35px;
-    margin: 30px 0 0 106px;
-    font-size: 12px;
+    width: 60%px;
+    height: 40px;
+    margin: 30px 0 0 70px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+  
 }
-@media (min-width: 445px) and (max-width: 449px) {
+@media (min-width: 445px) and (max-width: 768px) {
   .contact-button {
     width: 50%;
-    height: 40px;
+    height: 45px;
     margin: 30px 0 0 110px;
     font-size: 16px;
     display: flex;
@@ -561,7 +573,7 @@ html {
     margin-left: 5px;
   }
   .why-glad {
-    margin: 10px .1rem;
+    margin: 10px 0.1rem;
   }
 
   .why-glad h1 {
@@ -611,16 +623,16 @@ html {
   margin-bottom: 15px;
 }
 
-.mc-field-group label, #companyname {
+.mc-field-group label,
+#companyname {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
   color: #1772bd;
- 
 }
 
-
-.mc-field-group input, .company-name {
+.mc-field-group input,
+.company-name {
   width: 60%;
   padding: 10px;
   border: 1px solid #1772bd;
@@ -629,7 +641,6 @@ html {
   height: 35px;
   background-color: #fff;
   color: #2b3d8e;
-
 }
 #mc_embed_signup {
   transform: translateX(200px);
@@ -665,75 +676,33 @@ html {
 }
 
 @media (max-width: 768px) {
-  .newsletter-popup {
-    color: white;
-    padding: 2rem;
-    border-radius: 8px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    align-items: center;
-  }
   .secNewsletter {
-    display: flex;
-    justify-content: center;
-    margin: 0 10px;
-    padding: 10px 0;
-    border-radius: 4px;
-    background-color: white;
-  }
-
-  .newsletter-content {
     display: flex;
     flex-direction: column;
   }
-
-  h2 {
-    margin-bottom: 0.9rem;
+  #mc_embed_signup {
+    transform: translateX(-95px);
   }
-  .new-letter-text {
-    font-size: 1.3rem;
-  }
-  .mailchimp-form {
-    font-size: 1rem;
-    justify-content: space-between;
-    margin-top: 25px;
-  }
-
-  .mailchimp-form input {
-    padding: 1rem;
-    border: 1px solid #2b3d8e;
+  .mc-field-group input,
+  .company-name {
+    width: 140%;
+    padding: 10px;
+    border: 1px solid #1772bd;
     border-radius: 2px;
     font-size: 1rem;
-    width: 230px;
+    height: 35px;
+    background-color: #fff;
+    color: #2b3d8e;
+  }
+  .mc-field-group {
+    margin-top: 30px;
+  }
+   .new-letter-text h2 {
+    font-size: 1.7rem;
     margin-bottom: 10px;
-    margin-left: -2px;
+    width: 350px;
+    transform: translateX(-25px);
   }
-
-  .mailchimp-form button {
-    padding: 0.8rem;
-    margin-left: -2px;
-    background-color: #1772bd;
-    color: white;
-    border-radius: 5px;
-    font-size: 1rem;
-    border: 1px solid#1772bd;
-    cursor: pointer;
-    width: 120px;
-    transition: background-color 0.3s;
-  }
-  .mailchimp-form button:hover {
-    background-color: white;
-    color: #1772bd;
-    border: 2px solid #1772bd;
-  }
-}
-
-.empty-message {
-  text-align: center;
-  color: #888;
-  font-size: 18px;
-  padding: 20px;
 }
 
 /*****************************
@@ -1241,9 +1210,9 @@ hr {
   .footer-content p {
     font-size: 15px; /* Adjust font size for readability */
     margin: 10px auto;
-    text-align: left;
+    text-align: center;
   }
-   .footer-content a {
+  .footer-content a {
     color: #2b3d8e;
     text-decoration: none;
   }
@@ -1261,7 +1230,7 @@ hr {
     width: 100%;
   }
   .social-icons a {
-    margin-top: 10px;
+    margin-top: -30px;
     transform: translateY(100px);
     color: #2b3d8e;
     text-decoration: none;

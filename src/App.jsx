@@ -237,7 +237,7 @@ const HomePage = () => {
         {/* Newsletter Signup Section */}
         <section className="secNewsletter">
           <div className="new-letter-text">
-            <h2>
+            <h2 className="stayinfo">
               Stay inspired by stories of how GLAD Technology is creating
               opportunities and transforming lives globally. Sign up for our
               email newsletter.
