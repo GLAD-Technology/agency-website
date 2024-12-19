@@ -209,7 +209,7 @@ html {
   color: #555;
   line-height: 1.6;
 }
-.icon-container{
+.icon-container {
   display: flex;
   justify-content: center;
 }
@@ -222,6 +222,21 @@ html {
 }
 .card1:hover .card-icon {
   color: #1772be;
+}
+
+/*=======================================
+  for medium screen 
+======================================*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .why-glad {
+  margin: 1rem 1rem;
+}
+
+.why-glad h1 {
+  text-align: left; /* Align heading to the left */
+  font-size: 2.5rem;
+  margin: 40px 0 70px 10px;
+}
 }
 /*=================================
  small screen for section why glad
@@ -470,7 +485,6 @@ html {
     margin: auto 10px;
     padding: 0 5px 50px 5px;
   }
-   
 }
 
 /*=========================================*/
@@ -517,7 +531,6 @@ html {
     align-items: center;
     justify-content: center;
   }
-  
 }
 @media (min-width: 445px) and (max-width: 768px) {
   .contact-button {
@@ -586,7 +599,78 @@ html {
     margin-left: 50px;
     margin-top: 20px;
   }
- }
+}
+/**==================================
+   for medium screen 
+=====================================*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contact-button {
+    width: 60%;
+    height: 50px;
+    margin: 40px 70px 0 30px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .homepage-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 1rem;
+  }
+
+  /* Hero Section Styles */
+  .hero-section {
+    position: relative;
+    max-width: 840px;
+    margin: 20px 5px;
+    border-radius: 4px;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    text-align: left;
+    margin: auto auto auto 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-text h1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    color: white;
+    font-size: 3rem;
+    white-space: nowrap;
+    align-self: center;
+    margin: auto auto auto 5px;
+    width: 700px;
+  }
+  /* styling the h1 on the hero page */
+
+  .hero-text h3 {
+    color: white;
+    margin-top: 50px;
+    line-height: 1;
+    font-size: 30px;
+    width: 600px;
+    margin-left: 5px;
+  }
+  .why-glad {
+    margin: 10px 0.1rem;
+  }
+
+  .why-glad h1 {
+    font-size: 1.9rem;
+    white-space: nowrap;
+    margin-left: 50px;
+    margin-top: 20px;
+  }
+}
 /*****************************
      NEWSLETTER SECTION
 /*****************************/
@@ -678,6 +762,27 @@ html {
 #mc-success-response {
   color: #38b000;
 }
+/*================================
+   news letter for medium screen
+==================================*/
+@media (min-width: 769px) and (max-width: 1024px) {
+  .secNewsletter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 30px;
+    background-color: white; /* Light background */
+    border-radius: 4px;
+    border: 1px solid #1772bd;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 5%;
+  }
+  #mc_embed_signup {
+    transform: translateX(140px);
+  }
+  
+}
 
 @media (max-width: 768px) {
   .secNewsletter {
@@ -701,7 +806,7 @@ html {
   .mc-field-group {
     margin-top: 30px;
   }
-   .new-letter-text h2 {
+  .new-letter-text h2 {
     font-size: 1.7rem;
     margin-bottom: 10px;
     width: 350px;
@@ -783,6 +888,18 @@ html {
   background-color: white;
   border: 2px solid #1772bd;
   color: #1772bd;
+}
+/*==============================
+  for medium screen
+===============================*/
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contact-form-container {
+    padding: 5rem 15rem;
+    max-width: 600px;
+    margin: 10px auto 20px auto;
+    background-color: #2b3d8e;
+    overflow-x: hidden;
+  }
 }
 /*==============================
  small screen styling for contact
@@ -1144,7 +1261,7 @@ hr {
 /**===================================
   footer on medium screen
 ======================================*/
-@media (min-width: 769px) and (max-width: 1300px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .footer-logo img {
     width: 200px;
     margin-left: 100px;
@@ -1172,7 +1289,7 @@ hr {
     display: flex;
     justify-content: center; /* Center social icons */
     width: 100%;
-    margin-left: -140px;
+    margin-left: -120px;
   }
   .social-icons a {
     margin-top: 10px;
