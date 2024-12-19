@@ -180,10 +180,12 @@ const HomePage = () => {
             {cards.length > 0 ? (
               cards.map((card, index) => (
                 <div key={index} className="card1">
-                  <FontAwesomeIcon
-                    icon={icons[card.icon]}
-                    className="card-icon"
-                  />
+                  <div className="icon-container">
+                    <FontAwesomeIcon
+                      icon={icons[card.icon]}
+                      className="card-icon"
+                    />
+                  </div>
                   <h2>{card.heading}</h2>
                   <p>{card.description}</p>
                 </div>
