@@ -106,7 +106,7 @@ html {
   .hero-section {
     background-size: cover;
     background-position: center;
-    height: 550px;
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -141,10 +141,10 @@ html {
     flex-direction: column;
     margin-bottom: 1rem;
     color: white;
-    font-size: 2rem;
+    font-size: 2.2rem;
     white-space: nowrap;
     align-self: center;
-    margin: auto auto auto 85px;
+    margin: auto auto auto 55px;
     width: 400px;
   }
   /* styling the h1 on the hero page */
@@ -153,9 +153,9 @@ html {
     color: white;
     margin-top: 50px;
     line-height: 1;
-    font-size: 17px;
+    font-size: 20px;
     width: 300px;
-    margin-left: -10px;
+    margin-left: -40px;
   }
 }
 
@@ -224,11 +224,14 @@ html {
 =======================================*/
 @media (max-width: 768px) {
   .why-glad {
-    margin: 2rem 1rem;
+    margin: 10px .1rem;
   }
 
   .why-glad h1 {
     font-size: 1.8rem;
+    white-space: nowrap;
+    margin-left: 38px;
+    margin-top: 20px;
   }
 
   /* Flex container for cards */
@@ -557,7 +560,17 @@ html {
     width: 400px;
     margin-left: 5px;
   }
-}
+  .why-glad {
+    margin: 10px .1rem;
+  }
+
+  .why-glad h1 {
+    font-size: 1.9rem;
+    white-space: nowrap;
+    margin-left: 50px;
+    margin-top: 20px;
+  }
+ }
 /*****************************
      NEWSLETTER SECTION
 /*****************************/
@@ -870,6 +883,7 @@ html {
     font-size: 0.9rem;
     border-radius: 5px;
     cursor: pointer;
+    width: 20%;
     text-align: center;
   }
   .submit-button:hover {
@@ -1208,7 +1222,7 @@ hr {
     align-items: center; /* Center all content vertically */
     padding: 30px 30px 50px 30px;
     gap: 20px;
-    height: 270px;
+    height: 280px;
   }
 
   .footer-logo {
@@ -1224,12 +1238,10 @@ hr {
 
   .footer-content p {
     font-size: 15px; /* Adjust font size for readability */
-    margin: 1px auto;
-    text-align: center;
-    transform: translateY(20px);
+    margin: 10px auto;
+    text-align: left;
   }
-
-  .footer-content a {
+   .footer-content a {
     color: #2b3d8e;
     text-decoration: none;
   }
