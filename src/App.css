@@ -304,7 +304,7 @@ html {
   transition: all 0.4s ease; /* Smooth transition */
   width: 160px;
   height: 70px;
-  transform: translateX(5px);
+  transform: translateX(2px);
   margin-top: 45px;
 }
 
@@ -578,7 +578,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 40px 40px;
+  padding: 40px 45px;
   background-color: white; /* Light background */
   border-radius: 4px;
   border: 1px solid #1772bd;
@@ -640,7 +640,7 @@ html {
   color: white;
   padding: 15px 50px;
   border: none;
-  margin-top: 10px;
+  margin-top: 30px;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
@@ -891,7 +891,9 @@ html {
   }
 }
 
-/*  here we style our services */
+/*===========================================
+       here we style our services 
+=============================================*/
 
 .header {
   font-family: "Playfair Display";
@@ -918,7 +920,7 @@ html {
 
 .card {
   position: relative;
-  width: 350px; /* uniform width */
+  width: 355px; /* uniform width */
   height: 500px; /* uniform height */
   overflow: hidden;
   background-color: white;
