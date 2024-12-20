@@ -546,13 +546,13 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 0.1rem;
+    padding:1rem 0.1rem;
   }
 
   /* Hero Section Styles */
   .hero-section {
     position: relative;
-    max-width: 400px;
+    max-width: 500px;
     margin: 20px 5px;
     border-radius: 4px;
   }
@@ -577,7 +577,7 @@ html {
     white-space: nowrap;
     align-self: center;
     margin: auto auto auto 5px;
-    width: 400px;
+    width: 500px;
   }
   /* styling the h1 on the hero page */
 
@@ -586,7 +586,7 @@ html {
     margin-top: 50px;
     line-height: 1;
     font-size: 22px;
-    width: 400px;
+    width: 500px;
     margin-left: 5px;
   }
   .why-glad {
@@ -679,7 +679,7 @@ html {
   align-items: center;
   justify-content: space-between;
   padding: 40px 45px;
-  background-color: white; /* Light background */
+  background-color: #1772BD; /* Light background */
   border-radius: 4px;
   border: 1px solid #1772bd;
   max-width: 1200px;
@@ -696,6 +696,7 @@ html {
 .new-letter-text h2 {
   font-size: 1.7rem;
   margin-bottom: 10px;
+  color: white;
 }
 
 .new-letter-text .indicates-required {
@@ -716,7 +717,7 @@ html {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #1772bd;
+  color: white;
 }
 
 .mc-field-group input,
@@ -738,8 +739,8 @@ html {
   background-color: #2b3d8e;
   color: white;
   padding: 15px 50px;
-  border: none;
-  margin-top: 30px;
+  border: 2px solid #2b3d8e;
+  margin-top: 20px;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
@@ -747,11 +748,11 @@ html {
 }
 
 #mc-embedded-subscribe:hover {
-  background-color: #0056b3;
+  background-color: #2b3d88; 
 }
 
 .response {
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-top: 10px;
 }
 
@@ -765,13 +766,13 @@ html {
 /*================================
    news letter for medium screen
 ==================================*/
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .secNewsletter {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 40px 30px;
-    background-color: white; /* Light background */
+    background-color: #1772BD; /* Light background */
     border-radius: 4px;
     border: 1px solid #1772bd;
     max-width: 800px;
@@ -784,7 +785,7 @@ html {
   
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .secNewsletter {
     display: flex;
     flex-direction: column;
@@ -801,7 +802,7 @@ html {
     font-size: 1rem;
     height: 35px;
     background-color: #fff;
-    color: #2b3d8e;
+    color: #1772BD;
   }
   .mc-field-group {
     margin-top: 30px;
@@ -1102,8 +1103,8 @@ html {
   }
   #center {
     display: flex;
-    justify-content: center;
-    margin: auto;
+    justify-content: start;
+    margin: auto auto auto 50px;
   }
   .cards-container {
     display: flex;
@@ -1261,7 +1262,7 @@ hr {
 /**===================================
   footer on medium screen
 ======================================*/
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1400px) {
   .footer-logo img {
     width: 200px;
     margin-left: 100px;
@@ -1269,7 +1270,7 @@ hr {
   }
 
   .footer-content p {
-    font-size: 15px; /* Adjust font size for readability */
+    font-size: 18px; /* Adjust font size for readability */
     margin: 1px 50px;
   }
 
@@ -1302,7 +1303,7 @@ hr {
 /*=========================
  footer on small screen
 =============================*/
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   body {
     overflow-x: hidden;
   }

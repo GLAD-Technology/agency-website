@@ -290,21 +290,9 @@ const HomePage = () => {
                     required
                   />
                 </div>
-                <label id="companyname">Company Name</label>
                 <div id="mce-responses" className="response">
                   <div id="mce-error-response"></div>
                   <div id="mce-success-response"></div>
-                </div>
-
-                <div aria-hidden="true">
-                  <input
-                    className="company-name"
-                    type="text"
-                    placeholder="Company Name"
-                    name="b_11e6d08daf1ee202a943d36ec_f84e0d7487"
-                    tabIndex="-1"
-                    defaultValue=""
-                  />
                 </div>
                 <div className="optionalParent">
                   <div className="foot">
