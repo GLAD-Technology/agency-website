@@ -552,7 +552,7 @@ html {
   /* Hero Section Styles */
   .hero-section {
     position: relative;
-    max-width: 500px;
+    max-width: 650px;
     margin: 20px 5px;
     border-radius: 4px;
   }
@@ -586,7 +586,7 @@ html {
     margin-top: 50px;
     line-height: 1;
     font-size: 22px;
-    width: 500px;
+    width: 600px;
     margin-left: 5px;
   }
   .why-glad {
@@ -789,6 +789,7 @@ html {
   .secNewsletter {
     display: flex;
     flex-direction: column;
+    margin-left: -5px;    
   }
   #mc_embed_signup {
     transform: translateX(-95px);
@@ -895,8 +896,8 @@ html {
 ===============================*/
 @media (min-width: 769px) and (max-width: 1024px) {
   .contact-form-container {
-    padding: 5rem 15rem;
-    max-width: 600px;
+    padding: 5rem 17rem;
+    max-width: 800px;
     margin: 10px auto 20px auto;
     background-color: #2b3d8e;
     overflow-x: hidden;
@@ -1298,6 +1299,61 @@ hr {
     color: #2b3d8e;
     text-decoration: none;
     font-size: 14px; /* Increase size for better visibility */
+  }
+  /*****************************************
+     our services cards in a medium screen
+  =========================================*/
+  .card {
+    position: relative;
+    width: 550px; /* uniform width */
+    height: 700px; /* uniform height */
+    overflow: hidden;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    border: 1px solid rgb(232, 227, 227);
+    gap: 10px;
+    padding: 0 1.85rem;
+  }
+
+   /* ============================
+    Flex container for cards for medium screen
+    ==================================*/
+   .cards-container1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center cards on each row */
+    gap: 1.4rem;
+    margin: 0 auto;
+  }
+
+  .card1 {
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 650px;
+    padding: 5rem 6rem;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  }
+
+  .card1:hover {
+    transform: scale(1.04);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .card1 h2 {
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card1 p {
+    font-size: 1.3rem;
+    color: #555;
+    line-height: 1.6;
   }
 }
 /*=========================
