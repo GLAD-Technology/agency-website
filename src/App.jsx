@@ -1,6 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useEffect, useRef } from "react";
 import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
+import {
   faDesktop,
   faGlobe,
   faHandshake,
@@ -24,7 +29,16 @@ const HomePage = () => {
   const [heroData, setHeroData] = useState(null);
 
   const handleScrollToContact = () => {
-    contactRef.current.scrollIntoView({ behavior: "smooth" });
+    // Scroll to the contact section
+    contactRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+
+    // Adjust scroll position after a slight delay to account for the fixed navbar
+    setTimeout(() => {
+      window.scrollBy(0, -60);
+    }, 80000);
   };
   const [services, setServices] = useState([]);
 
@@ -44,22 +58,42 @@ const HomePage = () => {
   }, []);
 
   const [formData, setFormData] = useState({
-    email: "",
     firstName: "",
     lastName: "",
+    email: "",
     phone: "",
     company: "",
     inquiry: "",
   });
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-  };
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        const errorResponse = await response.json();
+        setErrorMessage(errorResponse.message || "Failed to send the email.");
+      }
+    } catch (error) {
+      setErrorMessage("An error occurred. Please try again later.");
+    }
   };
 
   // Fetch hero section data
@@ -93,6 +127,10 @@ const HomePage = () => {
     fetchCardsData();
   }, []);
 
+  if (isSubmitted) {
+    return <p>Thank you for reaching out! We'll get back to you soon.</p>;
+  }
+
   return (
     <>
       <div className="navbar-container">
@@ -124,7 +162,9 @@ const HomePage = () => {
         >
           <div className="hero-overlay"></div>
           <div className="hero-text">
-            <h1>{heroData?.titleLine1 || "Empower Your Brand,"}</h1>
+            <h1 className="empower-text">
+              {heroData?.titleLine1 || "Empower Your Brand,"}
+            </h1>
             <h1>{heroData?.titleLine2 || "Empower Lives"}</h1>
             <h3>
               {heroData?.description ||
@@ -132,7 +172,7 @@ const HomePage = () => {
             </h3>
           </div>
         </div>
-
+        <br />
         {/* Why GLAD Technology Section */}
         <div className="why-glad">
           <h1>Why GLAD Technology?</h1>
@@ -140,10 +180,12 @@ const HomePage = () => {
             {cards.length > 0 ? (
               cards.map((card, index) => (
                 <div key={index} className="card1">
-                  <FontAwesomeIcon
-                    icon={icons[card.icon]}
-                    className="card-icon"
-                  />
+                  <div className="icon-container">
+                    <FontAwesomeIcon
+                      icon={icons[card.icon]}
+                      className="card-icon"
+                    />
+                  </div>
                   <h2>{card.heading}</h2>
                   <p>{card.description}</p>
                 </div>
@@ -155,34 +197,36 @@ const HomePage = () => {
             )}
           </div>
         </div>
-        {/* contact button goes here */}
-
+        {/*ontact button goes here */}
         <section className="contactus-btn">
-          <button
-            id="contact-us"
-            className="contact-button"
-            onClick={handleScrollToContact}
-          >
+          <button id="contact-us" onClick={handleScrollToContact}>
             Contact Us
           </button>
         </section>
+        <br />
         {/** services page is here */}
-<br />
         <section className="services">
-          <h1 className="header">Our Services</h1>
+          <div id="center">
+            <h1 className="header">Our Services</h1>
+          </div>
+          <hr />
+          <br />
+          <br />
+          <br />
+          <br />
           <div className="cards-container">
             {services.length > 0 ? (
               services.map((service, index) => (
                 <div key={index} className="card">
+                  <div className="card-overlay">
+                    <h2>{service.title}</h2>
+                    <p>{service.description}</p>
+                  </div>
                   <img
                     src={service.imageUrl}
                     alt={service.title}
                     className="card-image"
                   />
-                  <div className="card-text">
-                    <h2>{service.title}</h2>
-                    <h3>{service.description}</h3>
-                  </div>
                 </div>
               ))
             ) : (
@@ -190,49 +234,120 @@ const HomePage = () => {
             )}
           </div>
         </section>
-        <br /><br /> <br /> <br /><br /> <br /> 
+        <br />
+        <br /> <br />
         {/* Newsletter Signup Section */}
-       <section className="secNewsletter">
-       <div className="newsletter-popup">
-          <div className="newsletter-content">
-            <h2>
+        <section className="secNewsletter">
+          <div className="new-letter-text">
+            <h2 className="stayinfo">
               Stay inspired by stories of how GLAD Technology is creating
               opportunities and transforming lives globally. Sign up for our
               email newsletter.
             </h2>
-            <div
-              className="mailchimp-form"
-              dangerouslySetInnerHTML={{
-                __html: `
-                  <form action="https://your-mailchimp-url" method="post" target="_blank">
-                    <div>
-                      <input type="email" name="EMAIL" placeholder="Your email" required />
-                      <button type="submit">Sign Up</button>
-                    </div>
-                  </form>
-                `,
-              }}
-            />
           </div>
-        </div>
-       </section>
+
+          <div id="mc_embed_signup">
+            <form
+              action="https://gladtech.us11.list-manage.com/subscribe/post?u=11e6d08daf1ee202a943d36ec&amp;id=f84e0d7487&amp;f_id=000c0ee0f0"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              className="validate"
+              target="_blank"
+            >
+              <div id="mc_embed_signup_scroll">
+                <div className="mc-field-group">
+                  <label htmlFor="mce-FNAME">
+                    First Name <span className="asterisk">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="FNAME"
+                    id="mce-FNAME"
+                    placeholder="Enter your first name"
+                  />
+                </div>
+                <div className="mc-field-group">
+                  <label htmlFor="mce-LNAME">
+                    Last Name <span className="asterisk">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="LNAME"
+                    id="mce-LNAME"
+                    placeholder="Enter your last name"
+                  />
+                </div>
+                <div className="mc-field-group">
+                  <label htmlFor="mce-EMAIL">
+                    Email Address <span className="asterisk">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="EMAIL"
+                    id="mce-EMAIL"
+                    placeholder="Enter your email address"
+                    required
+                  />
+                </div>
+                <div id="mce-responses" className="response">
+                  <div id="mce-error-response"></div>
+                  <div id="mce-success-response"></div>
+                </div>
+                <div className="optionalParent">
+                  <div className="foot">
+                    <input
+                      type="submit"
+                      name="subscribe"
+                      id="mc-embedded-subscribe"
+                      className="button"
+                      value="Subscribe"
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          {/* Include Mailchimp scripts */}
+          <script
+            type="text/javascript"
+            src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
+          ></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+        (function($) {
+          window.fnames = new Array();
+          window.ftypes = new Array();
+          fnames[1]='FNAME';ftypes[1]='text';
+          fnames[2]='LNAME';ftypes[2]='text';
+          fnames[0]='EMAIL';ftypes[0]='email';
+        })(jQuery);
+        var $mcj = jQuery.noConflict(true);
+      `,
+            }}
+          />
+        </section>
       </div>
 
       {/* Contact Section */}
-      <section ref={contactRef} className="contact-section">
+      <section
+        ref={contactRef}
+        id="contact"
+        style={{ paddingTop: "60px" }}
+        className="contact-section"
+      >
         <div className="contact-form-container">
           <div className="contact-grid">
-            {/* Text Content */}
             <div>
               <h1 className="contact-title">Let&apos;s Connect</h1>
               <h2 className="contact-subtitle">
                 Contact GLAD Technology today to bring your ideas to life while
-                making a lasting impact. Let&apos;s create something
-                extraordinary together.
+                making a lasting impact.
               </h2>
             </div>
-            {/* Form */}
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="contact-form">
               <div className="form-grid">
                 <input
                   type="email"
@@ -288,8 +403,58 @@ const HomePage = () => {
               </div>
             </form>
           </div>
+
+          {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         </div>
       </section>
+      <footer className="footer">
+        <div className="footer-logo">
+          <img src="/GLAD_logo.png" alt="GLAD Logo" />
+        </div>
+        <div className="footer-content">
+          <div className="footer-details">
+            <div>
+              <p>
+                Email us at:{" "}
+                <a href="mailto:services@gladtech.io">services@gladtech.io</a>
+              </p>
+              <p>
+                For information about our non-profit educational branch:{" "}
+                <a
+                  href="https://www.gladtech.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  www.gladtech.org
+                </a>
+              </p>
+            </div>
+            <div className="social-icons">
+              <a
+                href="https://www.facebook.com/p/GLAD-Technology-100090154329991/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faFacebook} size="2x" />
+              </a>
+              <a
+                href="https://www.instagram.com/gladtechnology/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faInstagram} size="2x" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/glad-technology"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faLinkedin} size="2x" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   );
 };
