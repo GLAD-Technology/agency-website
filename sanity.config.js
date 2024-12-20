@@ -2,7 +2,7 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {whyGladCard} from './schemaTypes/whyGladCard'
-import herosection from './schemaTypes/herosection'
+import{ heroSection} from './schemaTypes/heroSection'
 import services from './schemaTypes/services'
 
 export default defineConfig({
@@ -15,6 +15,6 @@ export default defineConfig({
   plugins: [structureTool(), visionTool()],
 
   schema: {
-    types: [whyGladCard, herosection, services],
+    types: [whyGladCard, heroSection, services],
   },
 })
