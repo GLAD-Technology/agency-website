@@ -13,7 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./App.css";
-import client from "../../glad-agency/src/lib/sanity"; // Adjust the path to your `sanity.js`
+import client from "../../agency-website/src/lib/sanity" // Adjust the path to your `sanity.js`
 
 const icons = {
   faDesktop,
