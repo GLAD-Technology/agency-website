@@ -229,14 +229,14 @@ html {
 ======================================*/
 @media (min-width: 768px) and (max-width: 1024px) {
   .why-glad {
-  margin: 1rem 1rem;
-}
+    margin: 1rem 1rem;
+  }
 
-.why-glad h1 {
-  text-align: left; /* Align heading to the left */
-  font-size: 2.5rem;
-  margin: 40px 0 70px 10px;
-}
+  .why-glad h1 {
+    text-align: left; /* Align heading to the left */
+    font-size: 2.5rem;
+    margin: 40px 0 70px 10px;
+  }
 }
 /*=================================
  small screen for section why glad
@@ -299,15 +299,6 @@ html {
   }
 }
 
-/*===================================
-          this is navbar    
-  ==================================*/
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 40px; /* Add spacing to child content */
-}
-
 /*****************************
      CONTACT button
 /*****************************/
@@ -364,17 +355,27 @@ html {
 }
 
 /*===================================
-  for large screen
-  ===================================== */
-
+       THIS IS NAVBAR FOR LARGE SCREEN  
+  ==================================*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 25px; /* Add spacing to child content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
 .navbar-logo img {
-  width: 350px;
-  margin: 15px 0 0 15px;
+  width: 100%;
+  max-width: 350px;
+  margin: 15px 0 0 2px;
 }
 .contact-button {
   width: 140px;
   height: 50px;
-  margin-right: 113px;
+  margin-right: 95px;
   font-size: 16px;
 }
 .navbar-container {
@@ -384,65 +385,63 @@ html {
   padding: 0 40px;
   z-index: 2;
   background-color: white;
+
   left: 0; /* Ensures it starts from the left edge */
   right: 0; /* Ensures it spans to the right edge */
 }
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 40px; /* Add spacing to child content */
-}
+
 /*==============================
   NAVBAR ON SMALL SCREEN
 ================================*/
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 -5px;
+  }
+
+  .navbar-logo img {
+    height: auto;
+    width: 200px; /* Adjust logo size for smaller screens */
+    margin-left: -55px;
+  }
+
+  .navbar-links .contact-button {
+    width: auto;
+    height: 50px;
+    margin-right: 20px;
+    font-size: 15px;
+    transform: translateY(-15px);
+    color: white;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    margin-top: 10px 0;
+    padding: 0 5px;
+  }
+
+  .navbar-logo img {
+    height: auto; /* Further adjust logo size for very small screens */
+    margin-left: -32px;
+    width: 200px;
+  }
+
+  .navbar-links .contact-button {
+    font-size: 15px;
+    width: auto;
+    height: auto;
+    margin-right: 50px;
+    transform: translateY(-15px);
+  }
+}
+
 @media (max-width: 768px) {
   body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     overflow-x: hidden;
-  }
-  .navbar-container {
-    display: flex;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    padding: 0 5px;
-    justify-content: space-between;
-    z-index: 2;
-    background-color: white;
-    left: 0; /* Ensures it starts from the left edge */
-    right: 0; /* Ensures it spans to the right edge */
-    overflow-x: hidden;
-  }
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 auto;
-  }
-  .navbar-logo img {
-    width: 200px;
-    margin: 15px 0 10px -20px;
-  }
-  .navbar-links {
-    display: flex;
-
-    margin-right: auto;
-  }
-  .contact-button {
-    width: 100%;
-    height: 40px;
-    margin: 30px 0 0 auto;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .contact-button:hover {
-    background: white;
-    border: 2px solid #1772bd;
-    transform: translateX(6px);
-    color: #1772bd;
   }
 
   #contact-us {
@@ -466,15 +465,6 @@ html {
   }
 }
 @media (max-width: 361px) {
-  .contact-button {
-    width: 60%;
-    height: 42px;
-    margin: 25px 0 0 40px;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   .why-glad {
     margin: 1rem 1rem;
   }
@@ -489,15 +479,6 @@ html {
 
 /*=========================================*/
 @media (min-width: 370px) and (max-width: 380px) {
-  .contact-button {
-    width: 55%;
-    height: 40px;
-    margin: 30px 0 0 55px;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   .why-glad {
     margin: 1rem 1rem;
   }
@@ -510,43 +491,16 @@ html {
   }
 }
 @media (min-width: 380px) and (max-width: 410px) {
-  .contact-button {
-    width: 50%;
-    height: 40px;
-    margin: 30px 0 0 60px;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 }
 
 @media (min-width: 410px) and (max-width: 445px) {
-  .contact-button {
-    width: 60%px;
-    height: 40px;
-    margin: 30px 0 0 70px;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 }
 @media (min-width: 445px) and (max-width: 768px) {
-  .contact-button {
-    width: 50%;
-    height: 45px;
-    margin: 30px 0 0 110px;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   .homepage-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding:1rem 0.1rem;
+    padding: 1rem 0.1rem;
   }
 
   /* Hero Section Styles */
@@ -604,14 +558,23 @@ html {
    for medium screen 
 =====================================*/
 @media (min-width: 768px) and (max-width: 1024px) {
-  .contact-button {
-    width: 60%;
+  .navbar {
+    padding: 0 -5px;
+  }
+
+  .navbar-logo img {
+    height: auto;
+    width: 290px; /* Adjust logo size for smaller screens */
+    margin-left: -65px;
+  }
+
+  .navbar-links .contact-button {
+    width: auto;
     height: 50px;
-    margin: 40px 70px 0 30px;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-right: 20px;
+    font-size: 15px;
+    transform: translateY(-15px);
+    color: white;
   }
   .homepage-container {
     display: flex;
@@ -679,7 +642,7 @@ html {
   align-items: center;
   justify-content: space-between;
   padding: 40px 45px;
-  background-color: #1772BD; /* Light background */
+  background-color: #1772bd; /* Light background */
   border-radius: 4px;
   border: 1px solid #1772bd;
   max-width: 1200px;
@@ -748,7 +711,7 @@ html {
 }
 
 #mc-embedded-subscribe:hover {
-  background-color: #2b3d88; 
+  background-color: #2b3d88;
 }
 
 .response {
@@ -772,7 +735,7 @@ html {
     align-items: center;
     justify-content: space-between;
     padding: 40px 30px;
-    background-color: #1772BD; /* Light background */
+    background-color: #1772bd; /* Light background */
     border-radius: 4px;
     border: 1px solid #1772bd;
     max-width: 800px;
@@ -782,14 +745,13 @@ html {
   #mc_embed_signup {
     transform: translateX(140px);
   }
-  
 }
 
 @media (max-width: 767px) {
   .secNewsletter {
     display: flex;
     flex-direction: column;
-    margin-left: -5px;    
+    margin-left: -5px;
   }
   #mc_embed_signup {
     transform: translateX(-95px);
@@ -803,7 +765,7 @@ html {
     font-size: 1rem;
     height: 35px;
     background-color: #fff;
-    color: #1772BD;
+    color: #1772bd;
   }
   .mc-field-group {
     margin-top: 30px;
@@ -1319,10 +1281,10 @@ hr {
     padding: 0 1.85rem;
   }
 
-   /* ============================
+  /* ============================
     Flex container for cards for medium screen
     ==================================*/
-   .cards-container1 {
+  .cards-container1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Center cards on each row */
