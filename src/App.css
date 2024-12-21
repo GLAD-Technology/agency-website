@@ -360,7 +360,7 @@ html {
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 0 25px; /* Add spacing to child content */
+  padding: 0 35px; /* Add spacing to child content */
   display: flex;
   justify-content: space-between;
   align-items: center;
