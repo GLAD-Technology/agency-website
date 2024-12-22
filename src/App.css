@@ -10,16 +10,11 @@ html {
 /* General container and layout styles */
 .homepage-container {
   padding: 0 1rem;
+  width: 100%;
 }
 
 /* Hero Section Styles */
-.hero-section {
-  position: relative;
-  max-width: 1200px;
-  margin: 8rem auto auto auto; /*add some margins for the section due to the fixed navbar*/
-  border-radius: 4px;
-  overflow: hidden;
-}
+
 .hero-section::before {
   content: "";
   position: absolute;
@@ -31,13 +26,22 @@ html {
   z-index: 1; /* Place it below text but above the image */
 }
 .hero-section {
+  max-width: 1200px;
   background-size: cover;
   background-position: center;
   height: 700px;
-  display: flex;
-  align-items: center;
   padding: 0 3rem;
   position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  border-radius: 4px;
+  margin: 8rem auto auto auto;
 }
 
 .hero-overlay {
@@ -49,13 +53,16 @@ html {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
   opacity: 30%;
+  z-index: 1;
 }
 
 .hero-text {
   z-index: 1;
-  max-width: 600px;
   text-align: left;
-  margin-left: 50px;
+  position: relative;
+  padding: 20px;
+  max-width: 80%;
+  margin: 0 auto 0 50px;
 }
 
 .hero-text h1 {
@@ -64,8 +71,6 @@ html {
   font-size: 70px;
   white-space: nowrap;
 }
-/* styling the h1 on the hero page */
-
 .hero-text h3 {
   color: white;
   margin-top: 50px;
@@ -73,89 +78,186 @@ html {
   font-size: 30px;
 }
 /*=====================================
+
   styling for small screens herosection
 =======================================*/
-@media (max-width: 768px) {
-  body {
-    overflow-x: hidden;
+@media (min-width: 951px) and (max-width: 1024px) {
+  .hero-section {
+    display: flex;
+    width: 895px;
+    height: 70vh;
+    margin-left: -5px;
+    justify-content: center;
   }
+  .hero-text {
+    text-align: left;
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    max-width: 100%;
+  }
+  .hero-text h1 {
+    margin-bottom: 5px;
+    margin-left: -35px;
+  }
+  .hero-text h3 {
+    margin: 30px auto 0 -35px;
+  }
+}
+/*===============================================
+ ON 810PX SCREENS
+=================================================*/
+@media (min-width: 800px) and (max-width: 951px) {
+  .hero-section {
+    margin: 8rem auto auto auto;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 750px;
+    justify-content: center;
+  }
+  .hero-section {
+    margin: 8rem auto auto auto;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    max-width: 750px;
+    justify-content: center;
+    transform: translateX(-20px);
+  }
+  .hero-text {
+    text-align: left;
+    position: relative;
+    z-index: 1;
+    padding: 5px;
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 2.15rem;
+    margin-bottom: 5px;
+    margin-left: -35px;
+  }
+
+  .hero-text h3 {
+    font-size: 1.2rem;
+    margin: 30px auto 0 -35px;
+  }
+  /*====================================
+   THIS IS NAVBAR ON 810PX
+  ========================================*/
+  .navbar {
+    padding: 0 2px;
+  }
+
+  .navbar-logo img {
+    height: auto;
+    width: 200px; /* Adjust logo size for smaller screens */
+    transform: translateX(-55px);
+  }
+
+  .navbar-links .contact-button {
+    width: auto;
+    height: 50px;
+    margin-right: 20px;
+    font-size: 15px;
+    transform: translate(-20px, -15px);
+    color: white;
+  }
+}
+
+@media (max-width: 800px) {
   .homepage-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 0.1rem;
-  }
-
-  /* Hero Section Styles */
-  .hero-section {
-    position: relative;
-    max-width: 300px;
-    margin: 20px 5px;
-    border-radius: 4px;
-  }
-  .hero-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /*transparent background of gray*/
-    z-index: 1; /* Place it below text but above the image */
-  }
-  .hero-section {
-    background-size: cover;
-    background-position: center;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    margin: auto;
     overflow-x: hidden;
   }
-
-  .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    opacity: 30%;
-  }
-
-  .hero-text {
+  .hero-section {
+    margin: 8rem auto auto auto;
+    position: relative;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    z-index: 1;
-    text-align: left;
-    margin: auto auto auto 10px;
-    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 700px;
     justify-content: center;
+  }
+  .hero-text {
+    text-align: left;
+    position: relative;
+    z-index: 1;
+    padding: 5px;
+    max-width: 100%;
   }
 
   .hero-text h1 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 1rem;
-    color: white;
-    font-size: 2.2rem;
-    white-space: nowrap;
-    align-self: center;
-    margin: auto auto auto 55px;
-    width: 400px;
+    font-size: 2.15rem;
+    margin-bottom: 5px;
+    margin-left: -35px;
   }
-  /* styling the h1 on the hero page */
 
   .hero-text h3 {
-    color: white;
-    margin-top: 50px;
-    line-height: 1;
-    font-size: 20px;
-    width: 300px;
-    margin-left: -40px;
+    font-size: 1.2rem;
+    margin: 30px auto 0 -35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+  }
+  .hero-section {
+    height: 80vh; /* Adjust height for smaller screens */
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    max-width: 100%;
+    margin: 8rem auto auto auto;
+    padding: 0;
+    position: relative;
+    height: 90vh;
+    display: flex;
+    width: 480px;
+    justify-content: center;
+  }
+
+  .hero-text {
+    padding: 1px;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 2.15rem;
+    margin-bottom: 5px;
+    margin-left: -35px;
+  }
+
+  .hero-text h3 {
+    font-size: 1.2rem;
+    margin: 30px auto 0 -35px;
   }
 }
 
@@ -557,7 +659,7 @@ html {
 /**==================================
    for medium screen 
 =====================================*/
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 980px) and (max-width: 1024px) {
   .navbar {
     padding: 0 -5px;
   }
@@ -576,53 +678,7 @@ html {
     transform: translateY(-15px);
     color: white;
   }
-  .homepage-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 1rem;
-  }
 
-  /* Hero Section Styles */
-  .hero-section {
-    position: relative;
-    max-width: 840px;
-    margin: 20px 5px;
-    border-radius: 4px;
-  }
-
-  .hero-text {
-    display: flex;
-    flex-direction: column;
-    z-index: 1;
-    text-align: left;
-    margin: auto auto auto 10px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-text h1 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 1rem;
-    color: white;
-    font-size: 3rem;
-    white-space: nowrap;
-    align-self: center;
-    margin: auto auto auto 5px;
-    width: 700px;
-  }
-  /* styling the h1 on the hero page */
-
-  .hero-text h3 {
-    color: white;
-    margin-top: 50px;
-    line-height: 1;
-    font-size: 30px;
-    width: 600px;
-    margin-left: 5px;
-  }
   .why-glad {
     margin: 10px 0.1rem;
   }
