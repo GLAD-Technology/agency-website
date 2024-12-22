@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./",
+      "paths": {
+        "@sanity/*": ["glad-agency/src/lib/*"]
+      }
+    }
+  }
+  
