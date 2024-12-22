@@ -30,7 +30,7 @@ html {
   background-size: cover;
   background-position: center;
   height: 700px;
-  padding: 0 3rem;
+  padding: 0 2.4rem;
   position: relative;
   width: 100%;
   height: 100vh; /* Full screen height */
@@ -82,11 +82,27 @@ html {
   styling for small screens herosection
 =======================================*/
 @media (min-width: 951px) and (max-width: 1024px) {
+  .navbar {
+    transform: translateX(-20px);
+  }
+  .navbar-logo img {
+    height: auto;
+    width: 200px; /* Adjust logo size for smaller screens */
+    transform: translateX(15px);
+  }
   .hero-section {
     display: flex;
-    width: 895px;
     height: 70vh;
     margin-left: -5px;
+    justify-content: center;
+    margin: 8rem auto auto auto;
+    position: relative;
+    height: 70vh;
+    display: flex;
+    width: 95%;
+    padding: 0 30px;
+    max-width: 900px;
+    transform: translateX(-18px);
     justify-content: center;
   }
   .hero-text {
@@ -98,10 +114,17 @@ html {
   }
   .hero-text h1 {
     margin-bottom: 5px;
-    margin-left: -35px;
+    margin-left: -25px;
+    font-size: 4rem;
   }
   .hero-text h3 {
-    margin: 30px auto 0 -35px;
+    margin: 30px auto 0 -25px;
+    font-size: 2rem;
+  }
+  .contact-button:hover {
+    background: white;
+    border: 2px solid #1772bd;
+    color: #1772bd;
   }
 }
 /*===============================================
@@ -113,22 +136,12 @@ html {
     position: relative;
     height: 100vh;
     display: flex;
-    width: 90%;
-    margin: 0 auto;
-    max-width: 750px;
-    justify-content: center;
-  }
-  .hero-section {
-    margin: 8rem auto auto auto;
-    position: relative;
-    height: 100vh;
-    display: flex;
     width: 80%;
-    margin: 0 auto;
-    max-width: 750px;
+    max-width: 800px;
+    transform: translateX(-25px);
     justify-content: center;
-    transform: translateX(-20px);
   }
+
   .hero-text {
     text-align: left;
     position: relative;
@@ -138,20 +151,20 @@ html {
   }
 
   .hero-text h1 {
-    font-size: 2.15rem;
+    font-size: 3rem;
     margin-bottom: 5px;
     margin-left: -35px;
   }
 
   .hero-text h3 {
-    font-size: 1.2rem;
+    font-size: 1.9rem;
     margin: 30px auto 0 -35px;
   }
   /*====================================
    THIS IS NAVBAR ON 810PX
   ========================================*/
   .navbar {
-    padding: 0 2px;
+    padding: 0 2rem;
   }
 
   .navbar-logo img {
@@ -163,30 +176,42 @@ html {
   .navbar-links .contact-button {
     width: auto;
     height: 50px;
-    margin-right: 20px;
+    margin-right: 50px;
     font-size: 15px;
-    transform: translate(-20px, -15px);
     color: white;
+    background-color: #1772bd;
+  }
+  .navbar-links .contact-button:hover {
+    background: white;
+    border: 2px solid #1772bd;
+    color: #1772bd;
   }
 }
 
-@media (max-width: 800px) {
+@media (min-width: 768px) and(max-width: 800px) {
+  .navbar-logo img {
+    height: auto;
+    width: 200px; /* Adjust logo size for smaller screens */
+    transform: translateX(-15px);
+  }
   .homepage-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: auto;
     overflow-x: hidden;
+    padding: 0;
   }
   .hero-section {
     margin: 8rem auto auto auto;
     position: relative;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     width: 90%;
     margin: 0 auto;
     max-width: 700px;
     justify-content: center;
+    transform: translateX(20px);
   }
   .hero-text {
     text-align: left;
@@ -204,7 +229,12 @@ html {
 
   .hero-text h3 {
     font-size: 1.2rem;
-    margin: 30px auto 0 -35px;
+    margin: 30px auto 0 25px;
+  }
+  .contact-button:hover {
+    background: white;
+    border: 2px solid #1772bd;
+    color: #1772bd;
   }
 }
 
@@ -216,7 +246,8 @@ html {
     padding: 0;
   }
   .hero-section {
-    height: 80vh; /* Adjust height for smaller screens */
+    height: 80vh;
+    transform: translateX(0);
   }
 
   .hero-text h1 {
@@ -462,7 +493,7 @@ html {
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 0 35px; /* Add spacing to child content */
+  padding: 0 40px; /* Add spacing to child content */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -480,14 +511,18 @@ html {
   margin-right: 95px;
   font-size: 16px;
 }
+.contact-button:hover {
+  background: white;
+  border: 2px solid #1772bd;
+  color: #1772bd;
+}
 .navbar-container {
   width: 100%;
   position: fixed;
   top: 0;
-  padding: 0 40px;
+  padding: 0 45px;
   z-index: 2;
   background-color: white;
-
   left: 0; /* Ensures it starts from the left edge */
   right: 0; /* Ensures it spans to the right edge */
 }
@@ -513,7 +548,13 @@ html {
     margin-right: 20px;
     font-size: 15px;
     transform: translateY(-15px);
+    background-color: #1772bd ;
     color: white;
+  }
+  .contact-button:hover {
+    background: white;
+    border: 2px solid #1772bd;
+    color: #1772bd;
   }
 }
 
@@ -535,6 +576,11 @@ html {
     height: auto;
     margin-right: 50px;
     transform: translateY(-15px);
+  }
+  .contact-button:hover {
+    background: white;
+    border: 2px solid #1772bd;
+    color: #1772bd;
   }
 }
 
