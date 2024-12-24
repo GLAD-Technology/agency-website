@@ -272,7 +272,7 @@ html {
 .why-glad h1 {
   text-align: left; /* Align heading to the left */
   font-size: 2.5rem;
-  margin: 40px 0 70px 78px;
+  margin: 40px 0 70px 90px;
 }
 
 /* Flex container for cards */
@@ -1055,7 +1055,7 @@ html {
   display: flex;
   justify-content: start;
   text-align: left; /* Align heading to the left */
-  margin: 20px 0 30px 92px;
+  margin: 20px 0 30px 105px;
 }
 .cards-container {
   display: flex;
