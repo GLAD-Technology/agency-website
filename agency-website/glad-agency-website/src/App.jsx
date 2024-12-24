@@ -34,11 +34,6 @@ const HomePage = () => {
       behavior: "smooth",
       block: "center",
     });
-
-    // Adjust scroll position after a slight delay to account for the fixed navbar
-    setTimeout(() => {
-      window.scrollBy(0, -60);
-    }, 80000);
   };
   const [services, setServices] = useState([]);
 
@@ -95,7 +90,9 @@ const HomePage = () => {
       setErrorMessage("An error occurred. Please try again later.");
     }
   }; */
-  } {/*
+  }
+  {
+    /*
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -118,45 +115,46 @@ const HomePage = () => {
       setErrorMessage("An error occurred. Please try again later.");
     }
   };
-*/}
-const handleSubmit = async (e) => {
-  e.preventDefault();
+*/
+  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  try {
-    const response = await fetch("/api/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-
-    if (response.ok) {
-      setIsSubmitted(true); // Show the thank-you message
-      setErrorMessage(""); // Clear any previous errors
-
-      // Clear form fields
-      setFormData({
-        email: "",
-        firstName: "",
-        lastName: "",
-        phone: "",
-        company: "",
-        inquiry: "",
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
 
-      // Automatically hide the thank-you message after 5 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 1800);
-    } else {
-      const errorResponse = await response.json();
-      setErrorMessage(errorResponse.message || "Failed to send the email.");
+      if (response.ok) {
+        setIsSubmitted(true); // Show the thank-you message
+        setErrorMessage(""); // Clear any previous errors
+
+        // Clear form fields
+        setFormData({
+          email: "",
+          firstName: "",
+          lastName: "",
+          phone: "",
+          company: "",
+          inquiry: "",
+        });
+
+        // Automatically hide the thank-you message after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 1800);
+      } else {
+        const errorResponse = await response.json();
+        setErrorMessage(errorResponse.message || "Failed to send the email.");
+      }
+    } catch (error) {
+      setErrorMessage("An error occurred. Please try again later.");
     }
-  } catch (error) {
-    setErrorMessage("An error occurred. Please try again later.");
-  }
-};
+  };
 
   // Fetch hero section data
   useEffect(() => {
@@ -533,13 +531,13 @@ const handleSubmit = async (e) => {
                     onChange={handleChange}
                     className="input-field"
                   />
-                   <textarea
-                  name="inquiry"
-                  placeholder="Inquiry*"
-                  required
-                  onChange={handleChange}
-                  className="input-field textarea"
-                />
+                  <textarea
+                    name="inquiry"
+                    placeholder="Inquiry*"
+                    required
+                    onChange={handleChange}
+                    className="input-field textarea"
+                  />
                 </div>
                 <button type="submit" className="submit-button">
                   Submit

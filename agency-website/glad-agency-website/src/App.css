@@ -184,6 +184,13 @@ html {
     border: 2px solid #1772bd;
     color: #1772bd;
   }
+ .navbar-links .contact-button:hover {
+    background: white;
+    border: 2px solid #1772bd;
+    color: #1772bd;
+    margin-right: 35px;
+   
+  }
 }
 
 @media (max-width: 768px) {
@@ -333,6 +340,7 @@ html {
     font-size: 2.5rem;
     margin: 40px 0 70px 10px;
   }
+  
 }
 /*=================================
  small screen for section why glad
@@ -478,6 +486,8 @@ html {
   background: white;
   border: 2px solid #1772bd;
   color: #1772bd;
+  margin-right:80px;
+ 
 }
 .navbar-container {
   width: 100%;
@@ -839,7 +849,7 @@ html {
   font-family: "Playfair Display", serif;
   margin-top: 1rem;
   font-weight: 450;
-  margin-left: -210px;
+  margin-left: -180px;
 }
 .contact-subtitle {
   font-size: 1.4rem;
@@ -847,7 +857,7 @@ html {
   font-weight: 400;
   line-height: 1.4;
   color: white;
-  margin-left: -210px;
+  margin-left: -180px;
 }
 /* Form Layout */
 .form-grid {
@@ -892,19 +902,8 @@ html {
   border: 2px solid #1772bd;
   color: #1772bd;
 }
-/*==============================
-  for medium screen
-===============================*/
-@media (min-width: 768px) and (max-width: 1024px) {
-  .contact-form-container {
-    padding: 5rem 17rem;
-    max-width: 800px;
-    margin: 10px auto 20px auto;
-    background-color: #2b3d8e;
-    overflow-x: hidden;
-  }
- 
-}
+
+
 /*==============================
  small screen styling for contact
 ================================*/
@@ -992,7 +991,7 @@ html {
   .contact-form-container {
     padding: 4rem 10rem; /* Adjusted for medium screens */
     max-width: 800px;
-    margin: 10px auto; /* Centered the container */
+    margin: 60px auto; /* Centered the container */
     background-color: #2b3d8e;
     overflow-x: hidden;
   }
