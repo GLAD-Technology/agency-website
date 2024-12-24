@@ -13,7 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./App.css";
-import client from "../../glad-agency-website/src/lib/sanity" // Adjust the path to your `sanity.js`
+import client from "../../glad-agency-website/src/lib/sanity"; // Adjust the path to your `sanity.js`
 
 const icons = {
   faDesktop,
@@ -72,8 +72,8 @@ const HomePage = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
-  const handleSubmit = async (e) => {
+  {
+    /**  const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
@@ -94,7 +94,69 @@ const HomePage = () => {
     } catch (error) {
       setErrorMessage("An error occurred. Please try again later.");
     }
+  }; */
+  } {/*
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true); // Show the thank-you message
+      } else {
+        const errorResponse = await response.json();
+        setErrorMessage(errorResponse.message || "Failed to send the email.");
+      }
+    } catch (error) {
+      setErrorMessage("An error occurred. Please try again later.");
+    }
   };
+*/}
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch("/api/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      setIsSubmitted(true); // Show the thank-you message
+      setErrorMessage(""); // Clear any previous errors
+
+      // Clear form fields
+      setFormData({
+        email: "",
+        firstName: "",
+        lastName: "",
+        phone: "",
+        company: "",
+        inquiry: "",
+      });
+
+      // Automatically hide the thank-you message after 5 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+      }, 1800);
+    } else {
+      const errorResponse = await response.json();
+      setErrorMessage(errorResponse.message || "Failed to send the email.");
+    }
+  } catch (error) {
+    setErrorMessage("An error occurred. Please try again later.");
+  }
+};
 
   // Fetch hero section data
   useEffect(() => {
@@ -128,7 +190,11 @@ const HomePage = () => {
   }, []);
 
   if (isSubmitted) {
-    return <p>Thank you for reaching out! We'll get back to you soon.</p>;
+    return (
+      <div className="thank-you-message">
+        Thank you for reaching out! We'll get back to you soon.
+      </div>
+    );
   }
 
   return (
@@ -331,8 +397,7 @@ const HomePage = () => {
         </section>
       </div>
 
-      {/* Contact Section */}
-      <section
+      {/* Contact Section  <section
         ref={contactRef}
         id="contact"
         style={{ paddingTop: "60px" }}
@@ -406,7 +471,85 @@ const HomePage = () => {
 
           {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         </div>
+      </section>*/}
+      <section
+        ref={contactRef}
+        id="contact"
+        style={{ paddingTop: "60px" }}
+        className="contact-section"
+      >
+        <div className="contact-form-container">
+          <div className="contact-grid">
+            <div>
+              <h1 className="contact-title">Let&apos;s Connect</h1>
+              <h2 className="contact-subtitle">
+                Contact GLAD Technology today to bring your ideas to life while
+                making a lasting impact.
+              </h2>
+            </div>
+            {isSubmitted ? (
+              <div className="thank-you-message">
+                Thank you for reaching out! We'll get back to you soon.
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="contact-form">
+                <div className="form-grid">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email*"
+                    required
+                    onChange={handleChange}
+                    className="input-field"
+                  />
+                  <div className="form-grid-row">
+                    <input
+                      type="text"
+                      name="firstName"
+                      placeholder="First Name*"
+                      required
+                      onChange={handleChange}
+                      className="input-field"
+                    />
+                    <input
+                      type="text"
+                      name="lastName"
+                      placeholder="Last Name"
+                      onChange={handleChange}
+                      className="input-field"
+                    />
+                  </div>
+                  <input
+                    type="text"
+                    name="phone"
+                    placeholder="Phone Number"
+                    onChange={handleChange}
+                    className="input-field"
+                  />
+                  <input
+                    type="text"
+                    name="company"
+                    placeholder="Company Name"
+                    onChange={handleChange}
+                    className="input-field"
+                  />
+                   <textarea
+                  name="inquiry"
+                  placeholder="Inquiry*"
+                  required
+                  onChange={handleChange}
+                  className="input-field textarea"
+                />
+                </div>
+                <button type="submit" className="submit-button">
+                  Submit
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
       </section>
+
       <footer className="footer">
         <div className="footer-logo">
           <img src="/GLAD_logo.png" alt="GLAD Logo" />

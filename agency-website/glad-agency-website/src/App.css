@@ -30,7 +30,7 @@ html {
   background-size: cover;
   background-position: center;
   height: 700px;
-  padding: 0 2.4rem;
+  padding: 0 3rem;
   position: relative;
   width: 100%;
   height: 100vh; /* Full screen height */
@@ -92,12 +92,10 @@ html {
   }
   .hero-section {
     display: flex;
-    height: 70vh;
-    margin-left: -5px;
     justify-content: center;
-    margin: 8rem auto auto auto;
+    margin: 8rem auto auto 10px;
     position: relative;
-    height: 70vh;
+    height: 100vh;
     display: flex;
     width: 95%;
     padding: 0 30px;
@@ -130,14 +128,14 @@ html {
 /*===============================================
  ON 810PX SCREENS
 =================================================*/
-@media (min-width: 800px) and (max-width: 951px) {
+@media (min-width: 768px) and (max-width: 951px) {
   .hero-section {
-    margin: 8rem auto auto auto;
+    margin: 8rem auto auto 15px;
     position: relative;
     height: 100vh;
     display: flex;
-    width: 80%;
-    max-width: 800px;
+    width: 100%;
+    max-width: fit-content;
     transform: translateX(-25px);
     justify-content: center;
   }
@@ -169,7 +167,7 @@ html {
 
   .navbar-logo img {
     height: auto;
-    width: 200px; /* Adjust logo size for smaller screens */
+    width: 100px; /* Adjust logo size for smaller screens */
     transform: translateX(-55px);
   }
 
@@ -188,56 +186,6 @@ html {
   }
 }
 
-@media (min-width: 768px) and(max-width: 800px) {
-  .navbar-logo img {
-    height: auto;
-    width: 200px; /* Adjust logo size for smaller screens */
-    transform: translateX(-15px);
-  }
-  .homepage-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto;
-    overflow-x: hidden;
-    padding: 0;
-  }
-  .hero-section {
-    margin: 8rem auto auto auto;
-    position: relative;
-    height: 80vh;
-    display: flex;
-    width: 90%;
-    margin: 0 auto;
-    max-width: 700px;
-    justify-content: center;
-    transform: translateX(20px);
-  }
-  .hero-text {
-    text-align: left;
-    position: relative;
-    z-index: 1;
-    padding: 5px;
-    max-width: 100%;
-  }
-
-  .hero-text h1 {
-    font-size: 2.15rem;
-    margin-bottom: 5px;
-    margin-left: -35px;
-  }
-
-  .hero-text h3 {
-    font-size: 1.2rem;
-    margin: 30px auto 0 25px;
-  }
-  .contact-button:hover {
-    background: white;
-    border: 2px solid #1772bd;
-    color: #1772bd;
-  }
-}
-
 @media (max-width: 768px) {
   .homepage-container {
     display: flex;
@@ -246,16 +194,19 @@ html {
     padding: 0;
   }
   .hero-section {
-    height: 80vh;
+    height: 100vh;
     transform: translateX(0);
+    margin: 8rem auto 40px auto;
   }
 
   .hero-text h1 {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 
   .hero-text h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
+
+    max-width: fit-content;
   }
 }
 
@@ -277,11 +228,11 @@ html {
     position: relative;
     z-index: 1;
     padding: 0;
-    max-width: 100%;
+    max-width: 80%;
   }
 
   .hero-text h1 {
-    font-size: 2.15rem;
+    font-size: 2rem;
     margin-bottom: 5px;
     margin-left: -35px;
   }
@@ -289,6 +240,7 @@ html {
   .hero-text h3 {
     font-size: 1.2rem;
     margin: 30px auto 0 -35px;
+    max-width: fit-content;
   }
 }
 
@@ -447,7 +399,7 @@ html {
   transition: all 0.4s ease; /* Smooth transition */
   width: 160px;
   height: 70px;
-  transform: translateX(2px);
+  transform: translateX(15px);
   margin-top: 45px;
 }
 
@@ -548,7 +500,7 @@ html {
     margin-right: 20px;
     font-size: 15px;
     transform: translateY(-15px);
-    background-color: #1772bd ;
+    background-color: #1772bd;
     color: white;
   }
   .contact-button:hover {
@@ -638,11 +590,7 @@ html {
     padding: 0 5px 50px 5px;
   }
 }
-@media (min-width: 380px) and (max-width: 410px) {
-}
 
-@media (min-width: 410px) and (max-width: 445px) {
-}
 @media (min-width: 445px) and (max-width: 768px) {
   .homepage-container {
     display: flex;
@@ -939,7 +887,7 @@ html {
   background-color: #1772bd;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   cursor: pointer;
@@ -948,6 +896,7 @@ html {
   height: 50px;
   align-items: center;
   white-space: hidden;
+  margin-top: 12px;
 }
 .submit-button:hover {
   background-color: white;
@@ -1476,5 +1425,49 @@ hr {
     color: #2b3d8e;
     text-decoration: none;
     font-size: 14px; /* Increase size for better visibility */
+  }
+}
+
+/*=================================
+      THE POP MESSAGE    
+  ==================================*/
+.thank-you-message {
+  background-color: #118B50; 
+  color: white;
+  border-radius: 2px; 
+  text-align: center; 
+  font-size: 1.2rem; 
+  width: 80%;
+  max-width: 400px; 
+  position: fixed;
+  top: 10%; 
+  height: 50px;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  padding: 20px 35px; 
+  transition: 1.75;
+  animation: fadeOut 1.8s forwards; /* Fade out effect */
+}
+.error-message {
+  background-color: #f44336; /* Red background */
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+/* Fade-out animation */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
