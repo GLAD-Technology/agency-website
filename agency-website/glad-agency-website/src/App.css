@@ -162,13 +162,13 @@ html {
    THIS IS NAVBAR ON 810PX
   ========================================*/
   .navbar {
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
 
   .navbar-logo img {
     height: auto;
     width: 100px; /* Adjust logo size for smaller screens */
-    transform: translateX(-55px);
+    transform: translateX(-50px);
   }
 
   .navbar-links .contact-button {
@@ -208,6 +208,11 @@ html {
 
     max-width: fit-content;
   }
+  .navbar-logo img {
+    height: auto;
+    width: 100px; /* Adjust logo size for smaller screens */
+    transform: translateX(-20px);
+  }
 }
 
 @media (max-width: 480px) {
@@ -242,6 +247,12 @@ html {
     margin: 30px auto 0 -35px;
     max-width: fit-content;
   }
+  .navbar-logo img {
+    height: auto;
+    width: 100px; /* Adjust logo size for smaller screens */
+    transform: translateX(-10px);
+  }
+
 }
 
 /*****************************
@@ -650,59 +661,29 @@ html {
     margin-top: 20px;
   }
 }
-/**==================================
-   for medium screen 
-=====================================*/
-@media (min-width: 980px) and (max-width: 1024px) {
-  .navbar {
-    padding: 0 -5px;
-  }
-
-  .navbar-logo img {
-    height: auto;
-    width: 290px; /* Adjust logo size for smaller screens */
-    margin-left: -65px;
-  }
-
-  .navbar-links .contact-button {
-    width: auto;
-    height: 50px;
-    margin-right: 20px;
-    font-size: 15px;
-    transform: translateY(-15px);
-  }
-
-  .why-glad {
-    margin: 10px 0.1rem;
-  }
-
-  .why-glad h1 {
-    font-size: 1.9rem;
-    white-space: nowrap;
-    margin-left: 50px;
-    margin-top: 20px;
-  }
-}
 /*****************************
      NEWSLETTER SECTION
 /*****************************/
 .secNewsletter {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 40px 45px;
-  background-color: #1772bd; /* Light background */
-  border-radius: 4px;
-  border: 1px solid #1772bd;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 5%;
+  padding: 40px 47px; 
+  background-color: #1772bd; 
+  border-radius: 4px; 
+  border: 1px solid #1772bd; 
+  margin: 30px auto; /*wiill check onthis later*/
+  width: 90%; 
+  max-width: 1200px; 
+  gap: 20px; /
 }
 
+/* Text inside the newsletter section */
 .new-letter-text {
-  flex: 4; /* 40% */
   font-size: 1.2rem;
-  color: black;
+  color: white;
+  width: 100%;
 }
 
 .new-letter-text h2 {
@@ -711,48 +692,44 @@ html {
   color: white;
 }
 
-.new-letter-text .indicates-required {
-  font-size: 0.9rem;
-  color: red;
-}
-
+/* Form container styling */
 #mc_embed_signup {
-  flex: 5; /* 50% */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .mc-field-group {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
-.mc-field-group label,
-#companyname {
+.mc-field-group label {
   display: block;
   margin-bottom: 5px;
-  font-weight: bold;
   color: white;
 }
 
-.mc-field-group input,
-.company-name {
-  width: 60%;
+.mc-field-group input {
+  width: 150%;
+  max-width: 400px;
   padding: 10px;
   border: 1px solid #1772bd;
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 1rem;
   height: 35px;
-  background-color: #fff;
+  background-color: white;
   color: #2b3d8e;
 }
-#mc_embed_signup {
-  transform: translateX(200px);
-}
 
+/* Subscribe Button Styling */
 #mc-embedded-subscribe {
   background-color: #2b3d8e;
   color: white;
-  padding: 15px 50px;
+  padding: 15px 30px;
   border: 2px solid #2b3d8e;
-  margin-top: 20px;
+  margin-top: 10px;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
@@ -763,67 +740,79 @@ html {
   background-color: #2b3d88;
 }
 
-.response {
-  font-size: 1rem;
-  margin-top: 10px;
-}
-
-#mc-error-response {
-  color: #e63946;
-}
-
-#mc-success-response {
-  color: #38b000;
-}
-/*================================
-   news letter for medium screen
-==================================*/
+/* Medium Screens (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .secNewsletter {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 40px 30px;
-    background-color: #1772bd; /* Light background */
-    border-radius: 4px;
-    border: 1px solid #1772bd;
-    max-width: 800px;
-    margin: 0 auto;
-    gap: 5%;
+    padding: 40px 0 40px 30px;  /* Increase padding on medium screens */
+    gap: 5px;  /* Increase space between elements */
+    margin: 10px auto 10px 20px;  /* Center the section */
   }
+
+  .new-letter-text h2 {
+    font-size: 1.5rem;  /* Adjust font size for medium screens */
+  }
+
   #mc_embed_signup {
-    transform: translateX(140px);
+    max-width: 80%;  /* Limit form width on medium screens */
+  }
+  .mc-field-group input {
+    width: 115%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #1772bd;
+    border-radius: 4px;
+    font-size: 1rem;
+    height: 35px;
+    margin: 0 auto ;
+    background-color: white;
+    color: #2b3d8e;
   }
 }
 
-@media (max-width: 767px) {
+/* Small Screens (max-width: 767px) */
+@media (max-width: 768px) {
   .secNewsletter {
-    display: flex;
-    flex-direction: column;
-    margin-left: -5px;
+    padding: 20px 1px 20px 25px;  /* Smaller padding for small screens */
+    margin: 20px auto;  /* Smaller margin for small screens */
+    flex-direction: column;  /* Stack items vertically */
+    gap: 15px;  /* Smaller gap between elements */
+    width: 70%;
   }
-  #mc_embed_signup {
-    transform: translateX(-95px);
+
+  .new-letter-text h2 {
+    font-size: 1.5rem;  /* Adjust font size for small screens */
+    margin-bottom: 15px;
+    width: 80%;
   }
-  .mc-field-group input,
-  .company-name {
+  .mc-field-group input {
     width: 140%;
-    padding: 10px;
-    border: 1px solid #1772bd;
-    border-radius: 2px;
-    font-size: 1rem;
-    height: 35px;
-    background-color: #fff;
-    color: #1772bd;
   }
-  .mc-field-group {
-    margin-top: 30px;
+
+  #mc_embed_signup {
+    max-width: 100%; 
+   align-items: start;
+  }
+}
+
+/* For very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .secNewsletter {
+    padding: 20px 1px 20px 25px;  /* Smaller padding for small screens */
+    margin: 20px auto 20px 5px;  /* Smaller margin for small screens */
+    flex-direction: column;  /* Stack items vertically */
+    gap: 15px;  /* Smaller gap between elements */
+    width: 90%;
   }
   .new-letter-text h2 {
-    font-size: 1.7rem;
-    margin-bottom: 10px;
-    width: 350px;
-    transform: translateX(-25px);
+    font-size: 1.5rem;  /* Smaller font size for very small screens */
+  }
+
+  .mc-field-group input {
+    max-width: 125%;  /* Ensure input fields take up full width */
+  }
+
+  #mc-embedded-subscribe {
+    padding: 15px 20px;  /* Smaller padding for subscribe button */
   }
 }
 
@@ -906,7 +895,7 @@ html {
 /*==============================
   for medium screen
 ===============================*/
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .contact-form-container {
     padding: 5rem 17rem;
     max-width: 800px;
@@ -914,6 +903,7 @@ html {
     background-color: #2b3d8e;
     overflow-x: hidden;
   }
+ 
 }
 /*==============================
  small screen styling for contact
@@ -926,6 +916,7 @@ html {
     display: flex;
     justify-content: center;
     margin-top: 50px;
+    padding: 5px 0;
     background-color: #2b3d8e;
   }
   .contact-form-container {
@@ -936,12 +927,12 @@ html {
     background-color: #2b3d8e;
     padding: 10px 20px;
     z-index: 1;
-    transform: translateY(-50px);
   }
   .contact-grid {
     display: flex;
     flex-direction: column;
     width: 100%;
+    gap:0;
   }
   .contact-title {
     font-size: 1.8rem;
@@ -992,6 +983,58 @@ html {
   }
   .submit-button:hover {
     background-color: white;
+  }
+}
+/*==============================
+  for medium screen
+===============================*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contact-form-container {
+    padding: 4rem 10rem; /* Adjusted for medium screens */
+    max-width: 800px;
+    margin: 10px auto; /* Centered the container */
+    background-color: #2b3d8e;
+    overflow-x: hidden;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: auto auto; /* Two columns for layout */
+    gap: 10rem; /* Spacing between columns */
+    
+  }
+
+  .contact-title,
+  .contact-subtitle {
+    text-align: left; /* Align text to the left */
+    margin-left: -50px; /* Remove excessive left margin */
+  }
+
+  .contact-title {
+    font-size: 2.5rem; /* Adjust font size for medium screens */
+    margin-bottom: 1rem;
+  }
+
+  .contact-subtitle {
+    font-size: 1.5rem; /* Adjust subtitle size */
+    line-height: 1.5;
+  }
+
+  .form-grid {
+    display: grid;
+    gap: 1.5rem; /* Adjust gap between form elements */
+    justify-items: start; /* Align inputs to the left */
+  }
+
+  .input-field {
+    width: 120%; /* Adjust input width for medium screens */
+    font-size: 1rem;
+  }
+
+  .submit-button {
+    width: 100%; /* Adjust button width */
+    font-size: 1rem;
+    margin-top: 1rem;
   }
 }
 
