@@ -934,7 +934,7 @@ html {
     gap:0;
   }
   .contact-title {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
     color: white;
     font-family: "Playfair Display", serif;
     margin: -15px 0 0 3px;
@@ -1010,12 +1010,12 @@ html {
   }
 
   .contact-title {
-    font-size: 2.5rem; /* Adjust font size for medium screens */
+    font-size: 2.7rem; /* Adjust font size for medium screens */
     margin-bottom: 1rem;
   }
 
   .contact-subtitle {
-    font-size: 1.5rem; /* Adjust subtitle size */
+    font-size: 1.3rem; /* Adjust subtitle size */
     line-height: 1.5;
   }
 
