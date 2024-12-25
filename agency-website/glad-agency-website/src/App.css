@@ -930,7 +930,7 @@ html {
   .contact-grid {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     gap:0;
   }
   .contact-title {
@@ -947,14 +947,15 @@ html {
     margin-bottom: 1.5rem;
     margin-left: 1px;
   }
+ 
   .contact-form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 182%;
+    width: 170%;
   }
   .input-field {
-    width: 50%;
+    width: 70%;
     padding: 12px;
     font-size: 0.8rem;
     border: 1px solid #ccc;
