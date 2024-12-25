@@ -1468,6 +1468,8 @@ hr {
     color: #2b3d8e;
     text-decoration: none;
     font-size: 14px; /* Increase size for better visibility */
+    pointer-events: auto; /* Ensure links are clickable */
+    z-index: 1; /* Ensure links are above other elements */
   }
 }
 
