@@ -1490,7 +1490,7 @@ hr {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   padding: 20px 35px;
   transition: 1.75;
-  animation: fadeOut 1.8s forwards; /* Fade out effect */
+  animation: fadeOut 1.8s forwards, bounceOut 1.85s ease; /* Fade out effect */
 }
 .error-message {
   background-color: #f44336; /* Red background */
@@ -1512,5 +1512,21 @@ hr {
   }
   100% {
     opacity: 0;
+  }
+}
+
+/*bounce out animation*/
+@keyframes bounceOut {
+  0% {
+    transform: translate(-50%, -50%); /* Initial position */
+  }
+  20% {
+    transform: translate(-50%, -55%); /* Move up slightly */
+  }
+  40% {
+    transform: translate(-50%, -45%); /* Move down slightly */
+  }
+  100% {
+    transform: translate(-50%, -70%); /* Move down and out */
   }
 }
