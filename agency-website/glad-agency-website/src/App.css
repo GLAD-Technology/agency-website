@@ -184,12 +184,11 @@ html {
     border: 2px solid #1772bd;
     color: #1772bd;
   }
- .navbar-links .contact-button:hover {
+  .navbar-links .contact-button:hover {
     background: white;
     border: 2px solid #1772bd;
     color: #1772bd;
     margin-right: 35px;
-   
   }
 }
 
@@ -259,7 +258,6 @@ html {
     width: 100px; /* Adjust logo size for smaller screens */
     transform: translateX(-10px);
   }
-
 }
 
 /*****************************
@@ -340,7 +338,6 @@ html {
     font-size: 2.5rem;
     margin: 40px 0 70px 10px;
   }
-  
 }
 /*=================================
  small screen for section why glad
@@ -486,8 +483,7 @@ html {
   background: white;
   border: 2px solid #1772bd;
   color: #1772bd;
-  margin-right:80px;
- 
+  margin-right: 80px;
 }
 .navbar-container {
   width: 100%;
@@ -679,14 +675,14 @@ html {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 40px 47px; 
-  background-color: #1772bd; 
-  border-radius: 4px; 
-  border: 1px solid #1772bd; 
+  padding: 40px 47px;
+  background-color: #1772bd;
+  border-radius: 4px;
+  border: 1px solid #1772bd;
   margin: 30px auto; /*wiill check onthis later*/
-  width: 90%; 
-  max-width: 1200px; 
-  gap: 20px; /
+  width: 90%;
+  max-width: 1200px;
+  gap: 20px;
 }
 
 /* Text inside the newsletter section */
@@ -753,17 +749,17 @@ html {
 /* Medium Screens (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .secNewsletter {
-    padding: 40px 0 40px 30px;  /* Increase padding on medium screens */
-    gap: 5px;  /* Increase space between elements */
-    margin: 10px auto 10px 20px;  /* Center the section */
+    padding: 40px 0 40px 30px; /* Increase padding on medium screens */
+    gap: 5px; /* Increase space between elements */
+    margin: 10px auto 10px 20px; /* Center the section */
   }
 
   .new-letter-text h2 {
-    font-size: 1.5rem;  /* Adjust font size for medium screens */
+    font-size: 1.5rem; /* Adjust font size for medium screens */
   }
 
   #mc_embed_signup {
-    max-width: 80%;  /* Limit form width on medium screens */
+    max-width: 80%; /* Limit form width on medium screens */
   }
   .mc-field-group input {
     width: 115%;
@@ -773,7 +769,7 @@ html {
     border-radius: 4px;
     font-size: 1rem;
     height: 35px;
-    margin: 0 auto ;
+    margin: 0 auto;
     background-color: white;
     color: #2b3d8e;
   }
@@ -782,15 +778,15 @@ html {
 /* Small Screens (max-width: 767px) */
 @media (max-width: 768px) {
   .secNewsletter {
-    padding: 20px 1px 20px 25px;  /* Smaller padding for small screens */
-    margin: 20px auto;  /* Smaller margin for small screens */
-    flex-direction: column;  /* Stack items vertically */
-    gap: 15px;  /* Smaller gap between elements */
+    padding: 20px 1px 20px 25px; /* Smaller padding for small screens */
+    margin: 20px auto; /* Smaller margin for small screens */
+    flex-direction: column; /* Stack items vertically */
+    gap: 15px; /* Smaller gap between elements */
     width: 70%;
   }
 
   .new-letter-text h2 {
-    font-size: 1.5rem;  /* Adjust font size for small screens */
+    font-size: 1.5rem; /* Adjust font size for small screens */
     margin-bottom: 15px;
     width: 80%;
   }
@@ -799,30 +795,30 @@ html {
   }
 
   #mc_embed_signup {
-    max-width: 100%; 
-   align-items: start;
+    max-width: 100%;
+    align-items: start;
   }
 }
 
 /* For very small screens (max-width: 480px) */
 @media (max-width: 480px) {
   .secNewsletter {
-    padding: 20px 1px 20px 25px;  /* Smaller padding for small screens */
-    margin: 20px auto 20px 5px;  /* Smaller margin for small screens */
-    flex-direction: column;  /* Stack items vertically */
-    gap: 15px;  /* Smaller gap between elements */
+    padding: 20px 1px 20px 25px; /* Smaller padding for small screens */
+    margin: 20px auto 20px 5px; /* Smaller margin for small screens */
+    flex-direction: column; /* Stack items vertically */
+    gap: 15px; /* Smaller gap between elements */
     width: 90%;
   }
   .new-letter-text h2 {
-    font-size: 1.5rem;  /* Smaller font size for very small screens */
+    font-size: 1.5rem; /* Smaller font size for very small screens */
   }
 
   .mc-field-group input {
-    max-width: 125%;  /* Ensure input fields take up full width */
+    max-width: 125%; /* Ensure input fields take up full width */
   }
 
   #mc-embedded-subscribe {
-    padding: 15px 20px;  /* Smaller padding for subscribe button */
+    padding: 15px 20px; /* Smaller padding for subscribe button */
   }
 }
 
@@ -903,7 +899,6 @@ html {
   color: #1772bd;
 }
 
-
 /*==============================
  small screen styling for contact
 ================================*/
@@ -931,7 +926,7 @@ html {
     display: flex;
     flex-direction: column;
     width: 90%;
-    gap:0;
+    gap: 0;
   }
   .contact-title {
     font-size: 2.4rem;
@@ -947,7 +942,7 @@ html {
     margin-bottom: 1.5rem;
     margin-left: 1px;
   }
- 
+
   .contact-form {
     display: flex;
     flex-direction: column;
@@ -1001,7 +996,6 @@ html {
     display: grid;
     grid-template-columns: auto auto; /* Two columns for layout */
     gap: 10rem; /* Spacing between columns */
-    
   }
 
   .contact-title,
@@ -1308,6 +1302,8 @@ html {
   color: #2b3d8e;
   text-decoration: none;
   font-size: 18px;
+  pointer-events: auto;
+  z-index: 1;
 }
 
 /*for the breaking lines*/
@@ -1354,6 +1350,8 @@ hr {
     color: #2b3d8e;
     text-decoration: none;
     font-size: 14px; /* Increase size for better visibility */
+    pointer-events: auto;
+    z-index: 1;
   }
   /*****************************************
      our services cards in a medium screen
@@ -1477,20 +1475,20 @@ hr {
       THE POP MESSAGE    
   ==================================*/
 .thank-you-message {
-  background-color: #118B50; 
+  background-color: #118b50;
   color: white;
-  border-radius: 2px; 
-  text-align: center; 
-  font-size: 1.2rem; 
+  border-radius: 2px;
+  text-align: center;
+  font-size: 1.2rem;
   width: 80%;
-  max-width: 400px; 
+  max-width: 400px;
   position: fixed;
-  top: 10%; 
+  top: 10%;
   height: 50px;
   left: 50%;
-  transform: translate(-50%, -50%); 
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
-  padding: 20px 35px; 
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px 35px;
   transition: 1.75;
   animation: fadeOut 1.8s forwards; /* Fade out effect */
 }
