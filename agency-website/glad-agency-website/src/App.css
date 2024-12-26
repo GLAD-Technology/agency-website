@@ -947,10 +947,10 @@ html {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 170%;
+    width: 160%;
   }
   .input-field {
-    width: 70%;
+    width: 60%;
     padding: 12px;
     font-size: 0.8rem;
     border: 1px solid #ccc;
