@@ -1475,12 +1475,12 @@ hr {
       THE POP MESSAGE    
   ==================================*/
 .thank-you-message {
-  background-color: #118b50;
+  background-color: #2b3d8e;
   color: white;
   border-radius: 2px;
   text-align: center;
   font-size: 1.2rem;
-  width: 80%;
+  width: 90%;
   max-width: 400px;
   position: fixed;
   top: 10%;
@@ -1488,7 +1488,7 @@ hr {
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  padding: 20px 35px;
+  padding: 30px 100px;
   transition: 1.75;
   animation: fadeOut 1.8s forwards, bounceOut 1.85s ease; /* Fade out effect */
 }

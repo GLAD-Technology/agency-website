@@ -189,9 +189,83 @@ const HomePage = () => {
 
   if (isSubmitted) {
     return (
-      <div className="thank-you-message">
-        Thank you for reaching out! We'll get back to you soon.
-      </div>
+      <section
+        ref={contactRef}
+        id="contact"
+        style={{ paddingTop: "60px" }}
+        className="contact-section"
+      >
+        <div className="contact-form-container">
+          <div className="contact-grid">
+            <div>
+              <h1 className="contact-title">Let&apos;s Connect</h1>
+              <h2 className="contact-subtitle">
+                Contact GLAD Technology today to bring your ideas to life while
+                making a lasting impact.
+              </h2>
+            </div>
+            {isSubmitted ? (
+              <div className="thank-you-message">
+                Thank you for reaching out! We'll get back to you soon.
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="contact-form">
+                <div className="form-grid">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email*"
+                    required
+                    onChange={handleChange}
+                    className="input-field"
+                  />
+                  <div className="form-grid-row">
+                    <input
+                      type="text"
+                      name="firstName"
+                      placeholder="First Name*"
+                      required
+                      onChange={handleChange}
+                      className="input-field"
+                    />
+                    <input
+                      type="text"
+                      name="lastName"
+                      placeholder="Last Name"
+                      onChange={handleChange}
+                      className="input-field"
+                    />
+                  </div>
+                  <input
+                    type="text"
+                    name="phone"
+                    placeholder="Phone Number"
+                    onChange={handleChange}
+                    className="input-field"
+                  />
+                  <input
+                    type="text"
+                    name="company"
+                    placeholder="Company Name"
+                    onChange={handleChange}
+                    className="input-field"
+                  />
+                  <textarea
+                    name="inquiry"
+                    placeholder="Inquiry*"
+                    required
+                    onChange={handleChange}
+                    className="input-field textarea"
+                  />
+                </div>
+                <button type="submit" className="submit-button">
+                  Submit
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      </section>
     );
   }
 
