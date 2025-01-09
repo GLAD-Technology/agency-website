@@ -684,3 +684,26 @@ button[type='submit']:hover {
   background-color: #2b3d88;
 }
 
+/********************************
+ the pop message 
+*********************************/
+.thank-you-message {
+  background-color: #e6f7ff; /* Light blue background */
+  color: #1772bd; /* GLAD Technology blue for text */
+  padding: 20px 50px; /* Add padding for spacing */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 1.2rem; /* Slightly larger text */
+  text-align: center; /* Center the message */
+  margin-top: 20px; /* Add space above the message */
+  animation: fadeIn 3s ease-in-out; /* Smooth fade-in effect */
+}
+
+/* Optional: Add a fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
