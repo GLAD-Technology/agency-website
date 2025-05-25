@@ -9,7 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import './App.css';
-import client from '../../react-web-app/src/lib/sanity'; // Adjust the path to your `sanity.js`
+import client from './lib/sanity'; // Adjust the path to your `sanity.js`
 
 const icons = {
   faDesktop,
@@ -69,7 +69,7 @@ const HomePage = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('/api/send-email', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/send-email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
