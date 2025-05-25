@@ -9,7 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import './App.css';
-import client from './lib/sanity'; // Adjust the path to your `sanity.js`
+import client, { imageUrlBuilder } from './lib/sanity'; // Adjust the path to your `sanity.js`
 
 const icons = {
   faDesktop,
@@ -40,7 +40,7 @@ const HomePage = () => {
         `*[_type == "service"]{
           title,
           description,
-          "imageUrl": image.asset->url
+          "imageUrl": imageUrlBuilder(image).url()
         }`,
       );
       setServices(data);
@@ -112,7 +112,7 @@ const HomePage = () => {
           titleLine1,
           titleLine2,
           description,
-          "backgroundImage": backgroundImage.asset->url
+          "backgroundImage": imageUrlBuilder(backgroundImage).url()
         }`,
       );
       setHeroData(data);
@@ -241,6 +241,9 @@ const HomePage = () => {
           className='hero-section relative bg-cover bg-center h-[80vh] flex items-center justify-center'
           style={{
             backgroundImage: `url(${heroData?.backgroundImage || ''})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
           }}
         >
           <div className='hero-overlay absolute inset-0 bg-black bg-opacity-50'></div>
@@ -263,7 +266,7 @@ const HomePage = () => {
         {/* Why GLAD Technology Section */}
         <div className='why-glad px-4 py-8'>
           <h1 className=' glad text-3xl mb-8'>Why GLAD Technology?</h1>
-          <div className='cards-container1 grid grid-cols-1 md:grid-cols-3 gap-6'>
+          <div className='cards-container1 grid grid-cols-1 md:grid-cols-3 gap-6 min-h-[400px]'>
             {cards.length > 0 ? (
               cards.map((card, index) => (
                 <div key={index} className='card1 bg-white p-6 shadow-md rounded-md text-center'>
