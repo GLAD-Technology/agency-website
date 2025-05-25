@@ -9,4 +9,6 @@ const client = createClient({
   useCdn: true,
 });
 
-export { client, imageUrlBuilder };
+const imageBuilder = imageUrlBuilder(client);
+
+export { client, imageBuilder };

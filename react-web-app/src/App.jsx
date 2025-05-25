@@ -9,7 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import './App.css';
-import { client, imageUrlBuilder } from './lib/sanity'; // Adjust the path to your `sanity.js`
+import { client, imageBuilder } from './lib/sanity'; // Adjust the path to your `sanity.js`
 
 const icons = {
   faDesktop,
@@ -40,7 +40,7 @@ const HomePage = () => {
         `*[_type == "service"]{
           title,
           description,
-          "imageUrl": imageUrlBuilder(image).url()
+          "imageUrl": imageBuilder.image(image).url()
         }`,
       );
       setServices(data);
@@ -112,7 +112,7 @@ const HomePage = () => {
           titleLine1,
           titleLine2,
           description,
-          "backgroundImage": imageUrlBuilder(backgroundImage).url()
+          "backgroundImage": imageBuilder.image(backgroundImage).url()
         }`,
       );
       setHeroData(data);
