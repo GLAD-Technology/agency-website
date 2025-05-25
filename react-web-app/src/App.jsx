@@ -9,7 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import './App.css';
-import client, { imageUrlBuilder } from './lib/sanity'; // Adjust the path to your `sanity.js`
+import { client, imageUrlBuilder } from './lib/sanity'; // Adjust the path to your `sanity.js`
 
 const icons = {
   faDesktop,
