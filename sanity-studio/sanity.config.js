@@ -7,7 +7,10 @@ import services from './schemaTypes/services'
 
 export default defineConfig({
   name: 'default',
-  title: 'addingcomponents',
+  title: 'Glad Agency Studio',
+  apiVersion: '2023-11-01',
+  basePath: '/studio',
+  useCdn: true,
 
   projectId: 'bf7gkebb',
   dataset: 'production',

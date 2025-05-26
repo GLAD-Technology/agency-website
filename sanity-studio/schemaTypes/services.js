@@ -1,6 +1,6 @@
 export default {
     name: "service",
-    title: "Services",
+    title: "Service",
     type: "document",
     fields: [
       {
@@ -25,5 +25,10 @@ export default {
         validation: (Rule) => Rule.required(),
       },
     ],
+    preview: {
+      select: {
+        title: 'title',
+        media: 'image'
+      }
+    }
   };
-  

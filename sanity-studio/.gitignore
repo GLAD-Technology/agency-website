@@ -32,3 +32,4 @@ dist
 # Ensure specific Sanity files are included
 !.sanity.config.js
 !.sanity.json
+.vercel
