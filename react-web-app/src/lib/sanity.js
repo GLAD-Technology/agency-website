@@ -8,7 +8,7 @@ const client = createClient({
   apiVersion: '2025-05-26',
   useCdn: true,
   token: process.env.NEXT_PUBLIC_SANITY_TOKEN,
-  apiHost: 'https://glad-agency.sanity.studio'
+  apiHost: 'https://react-web-app-lemon.vercel.app'
 });
 
 const imageBuilder = imageUrlBuilder(client);
